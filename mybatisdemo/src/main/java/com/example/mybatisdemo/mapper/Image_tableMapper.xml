@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mybatisdemo.mapper.Image_tableMapper">
+    <select id="getAllImages" resultType="com.example.mybatisdemo.bean.Image_table">
+        select * from image_table
+    </select>
+    <insert id="addImage" parameterType="com.example.mybatisdemo.bean.Image_table">
+        insert into image_table (id,img,date) values (#{id},#{img},#{date})
+    </insert>
+    <update id="updateImageById" parameterType="com.example.mybatisdemo.bean.Image_table">
+        update image_table set img=#{img},date=#{date} where id=#{id}
+    </update>
+    <delete id="deleteImageById">
+        delete from image_table where id=#{id}
+    </delete>
+</mapper>
