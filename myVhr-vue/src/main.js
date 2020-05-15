@@ -5,9 +5,12 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import * as api from './utils/api';
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+
+Vue.prototype.api = api
 
 /* eslint-disable no-new */
 new Vue({

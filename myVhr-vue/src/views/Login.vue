@@ -1,24 +1,27 @@
 <template>
   <div class="login">
-    <el-form
-      :model="ruleForm"
-      status-icon
-      :rules="rules"
-      ref="ruleForm"
-      label-width="100px"
-      class="loginForm"
-    >
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model.number="ruleForm.username"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-      </el-form-item>
-    </el-form>
+    <div class="loginContainer">
+      <h2>用户登录</h2>
+      <el-form
+        :model="ruleForm"
+        status-icon
+        :rules="rules"
+        ref="ruleForm"
+        label-width="100px"
+        class="loginForm"
+      >
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model.number="ruleForm.username"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" prop="password">
+          <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+          <el-button @click="resetForm('ruleForm')">重置</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -55,15 +58,13 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          console.log(this.ruleForm);
-          this.axios
-            .post(this.BASE_URL + "doLogin", {
-              username: this.ruleForm.username,
-              password: this.ruleForm.password
-            })
-            .then(res => {
-              console.log(res.data);
-            });
+          this.api.postKeyValueRequest("/doLogin",this.ruleForm).then(res => {
+            if(res) {
+              sessionStorage.setItem("user",JSON.stringify(res.obj))
+              this.$router.replace("/home")
+            }
+            console.log(res)
+          })
         } else {
           console.log("error submit!!");
           return false;
@@ -82,13 +83,16 @@ export default {
 .login {
   width: 100%;
   height: 100%;
-  .loginForm {
+  .loginContainer {
     border-radius: 15px;
     background-clip: padding-box;
     margin: 180px auto;
     width: 400px;
     padding: 29px 75px 30px 10px;
     box-shadow: 0 0 20px 6px #00000052;
+    h2{
+      margin-left: 90px;
+    }
   }
 }
 </style>
