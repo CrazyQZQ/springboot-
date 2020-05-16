@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-container class="container">
+  <div class="home">
+    <el-container class="homeContainer">
       <el-header class="homeHeader">
         <div class="title">微人事</div>
         <div>
@@ -26,9 +26,9 @@
           </el-dropdown>
         </div>
       </el-header>
-      <el-container>
-        <!-- <el-aside width="200px">
-          <el-menu router unique-opened>
+      <el-container class="homeMainContainer">
+        <el-aside width="200px">
+          <el-menu router unique-opened class="homeMenu">
             <el-submenu
               :index="index+''"
               v-for="(item,index) in routes"
@@ -46,8 +46,8 @@
               >{{child.name}}</el-menu-item>
             </el-submenu>
           </el-menu>
-        </el-aside> -->
-        <!-- <el-main>
+        </el-aside>
+        <el-main>
           <el-breadcrumb
             separator-class="el-icon-arrow-right"
             v-if="this.$router.currentRoute.path!='/home'"
@@ -55,9 +55,9 @@
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item>{{this.$router.currentRoute.name}}</el-breadcrumb-item>
           </el-breadcrumb>
-          <div class="homeWelcome" v-if="this.$router.currentRoute.path=='/home'">欢迎来到微人事！</div>
+          <div class="homeWelcome" v-if="this.$router.currentRoute.path=='/home'">欢迎来到微人事！</div>-
           <router-view class="homeRouterView" />
-        </el-main> -->
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -72,9 +72,9 @@ export default {
     };
   },
   computed: {
-    // routes() {
-    //   return this.$store.state.routes;
-    // }
+    routes() {
+      return this.$store.state.routes;
+    }
   },
   methods: {
     goChat() {
@@ -88,7 +88,7 @@ export default {
           type: "warning"
         })
           .then(() => {
-            this.getRequest("/logout");
+            this.api.getRequest("/logout");
             window.sessionStorage.removeItem("user");
             this.$store.commit("initRoutes", []);
             this.$router.replace("/");
@@ -106,11 +106,23 @@ export default {
 </script>
 
 <style>
-.container{
-    height: 100%;
-    width: 100%;
+.home {
+  height: 100%;
+}
+.homeContainer {
+  height: 100%;
+  width: 100%;
+}
+.homeMainContainer {
+  height: 100%;
+  width: 100%;
+}
+.home .homeMainContainer .el-aside{
+  background-color: #ffffff;
+  border-right: solid 1px #e6e6e6;
 }
 .homeRouterView {
+  height: calc(100% - 42px);
   margin-top: 10px;
 }
 
@@ -151,5 +163,8 @@ export default {
 .el-dropdown-link {
   display: flex;
   align-items: center;
+}
+.homeMenu{
+  border-right: none;
 }
 </style>

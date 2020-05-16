@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4e50ec57-bf66-4807-a983-39adb45ebbad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/AdjustSalaryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/AdjustSalaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/AppraiseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/AppraiseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/DepartmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmpSalaryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmpSalaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeeecMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeeecMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeeremoveMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeeremoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeetrainMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/EmployeetrainMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/JobLevelMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/JobLevelMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/MenuRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/MenuRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/MsgContentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/MsgContentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/NationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/NationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/OpLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/OpLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/PoliticsstatusMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/PoliticsstatusMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/PositionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/PositionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/SalaryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/SalaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/SysMsgMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/SysMsgMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/AdjustSalaryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/AdjustSalaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/AppraiseMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/AppraiseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/DepartmentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmpSalaryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmpSalaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeeecMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeeecMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeeremoveMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeeremoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeetrainMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/EmployeetrainMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/HrMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/HrMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/HrRoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/HrRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/JobLevelMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/JobLevelMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/MenuMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/MenuRoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/MenuRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/MsgContentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/MsgContentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/NationMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/NationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/OpLogMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/OpLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/PoliticsstatusMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/PoliticsstatusMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/PositionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/PositionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/RoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/SalaryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/SalaryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/SysMsgMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-mapper/target/classes/com/qq/vhr/mapper/SysMsgMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/AdjustSalary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Appraise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/ChatMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/EmpSalary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Employeeec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Employeeremove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Employeetrain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Hr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/HrRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/JobLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/MenuRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Meta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/MsgContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Nation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/OpLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Politicsstatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/RespBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/RespPageBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Salary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/SysMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/AdjustSalary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Appraise.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/ChatMsg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Department.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/EmpSalary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Employee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Employeeec.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Employeeremove.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Employeetrain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Hr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/HrRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/JobLevel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/MenuRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Meta.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/MsgContent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Nation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/OpLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Politicsstatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Position.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/RespBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/RespPageBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/Salary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-model/target/classes/com/qq/vhr/model/SysMsg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/DepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/HrService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/JobLevelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/NationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/PoliticsstatusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/PositionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/SalaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/utils/HrUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/utils/POIUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/DepartmentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/EmployeeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/HrService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/JobLevelService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/MenuService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/NationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/PoliticsstatusService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/PositionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/RoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/service/SalaryService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/utils/HrUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/utils/POIUtils$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-service/target/classes/com/qq/vhr/utils/POIUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/MyVhrApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/CustomFilterInvocationSecurityMetadataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/CustomUrlDecisionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/ChatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/WsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/config/SystemConfigController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/emp/EmpBasicController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/salary/SalaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/salary/SobConfigController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/system/HrController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/system/basic/DepartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/system/basic/JobLevelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/system/basic/PermissController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/system/basic/PositionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/converter/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/src/test/java/com/qq/vhr/MyVhrApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/MyVhrApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/CustomFilterInvocationSecurityMetadataSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/CustomUrlDecisionManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/SecurityConfig$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/SecurityConfig$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/SecurityConfig$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/SecurityConfig$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/SecurityConfig$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/SecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/config/WebSocketConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/ChatController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/WsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/config/SystemConfigController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/emp/EmpBasicController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/salary/SalaryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/salary/SobConfigController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/system/HrController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/system/basic/DepartmentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/system/basic/JobLevelController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/system/basic/PermissController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/controller/system/basic/PositionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/converter/DateConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/classes/com/qq/vhr/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhrserver/vhr-web/target/test-classes/com/qq/vhr/MyVhrApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/MyVhrApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/controller/SystemConfigController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/AdjustSalaryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/AdjustSalaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/AppraiseMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/AppraiseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/DepartmentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/DepartmentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmpSalaryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmpSalaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeeecMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeeecMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeeremoveMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeeremoveMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeetrainMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/EmployeetrainMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/HrMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/HrMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/HrRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/HrRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/JObLevelMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/JObLevelMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/MenuMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/MenuMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/MenuRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/MenuRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/MsgContentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/MsgContentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/NationMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/NationMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/OpLogMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/OpLogMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/PoliticsstatusMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/PoliticsstatusMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/PositionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/PositionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/RoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/SalaryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/SalaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/SysMsgMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/mapper/SysMsgMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/AdjustSalary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Appraise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/EmpSalary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Employeeec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Employeeremove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Employeetrain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Hr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/HrRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/JObLevel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/MenuRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Meta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/MsgContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Nation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/OpLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Politicsstatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/RespBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/Salary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/model/SysMsg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/service/HrService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/java/com/qq/myvhr/service/MenuSevice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my-vhr/src/test/java/com/qq/myvhr/MyVhrApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myVhr-vue/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../myVhr-vue/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myVhr-vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../myVhr-vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myVhr-vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../myVhr-vue/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myVhr-vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../myVhr-vue/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myVhr-vue/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../myVhr-vue/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vuehr/vue.config.js" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/vhr-comments/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/vhr-mapper/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/vhr-model/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/vhr-service/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/vhr-web/target/" />
+    <ignored path="$PROJECT_DIR$/vhrserver/vhr-common/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/CustomFilterInvocationSecurityMetadataSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/CustomUrlDecisionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-268">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-110">
+              <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/HrRole.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>org.javaboy.vhr</find>
+      <find>org.javaboy</find>
+      <find>deps</find>
+      <find>employee/basic/deps</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>com.qq.vhr</replace>
+      <replace />
+      <replace>com.qq</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/AdjustSalary.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Appraise.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/ChatMsg.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Department.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-common/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/utils/POIUtils.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-model/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-service/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/SystemConfigController.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/WsController.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-web/pom.xml" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-web/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Hr.java" />
+        <option value="$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrMapper.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="my-vhr" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="my-vhr" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vhr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="vhrserver" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vhr" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/utils" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springboottogithub\springboot-\vhr\vhrserver\vhr-service\src\main\java\com\qq\vhr\utils" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="MyVhrApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="vhr-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.qq.vhr.MyVhrApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e50ec57-bf66-4807-a983-39adb45ebbad" name="Default Changelist" comment="" />
+      <created>1589619260809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589619260809</updated>
+      <workItem from="1589619262122" duration="325000" />
+      <workItem from="1589619655569" duration="3996000" />
+      <workItem from="1589623705622" duration="2956000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7277000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.26681128" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.329718" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vhr.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/ChatMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Department.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding>
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="e#1789#1790#0" expanded="true" />
+            <element signature="e#1853#1854#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-mapper/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/AdjustSalary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Appraise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/SwaggerConfig.java" />
+    <entry file="file://E:/idea_workspace/vhr/vhr/vhrserver/vhr-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="38" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-common/src/main/java/com/qq/vhr/utils/HrUtils.java" />
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-common/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/utils/POIUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/AdjustSalaryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/AdjustSalaryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/DepartmentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/DepartmentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/utils/HrUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/SystemConfigController.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-service/src/main/java/com/qq/vhr/service/EmployeeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/ChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/WsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/config/SystemConfigController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/controller/emp/EmpBasicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-683">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/MyVhrApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/exception/GlobalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/Hr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-mapper/src/main/java/com/qq/vhr/mapper/HrMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/CustomFilterInvocationSecurityMetadataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/CustomUrlDecisionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-model/src/main/java/com/qq/vhr/model/HrRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vhrserver/vhr-web/src/main/java/com/qq/vhr/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>vhr-mapper</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

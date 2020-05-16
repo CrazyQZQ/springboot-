@@ -58,13 +58,17 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.api.postKeyValueRequest("/doLogin",this.ruleForm).then(res => {
-            if(res) {
-              sessionStorage.setItem("user",JSON.stringify(res.obj))
-              this.$router.replace("/home")
+          this.api.postKeyValueRequest("/doLogin", this.ruleForm).then(res => {
+            if (res) {
+              // this.$store.commit("INIT_CURRENTHR", resp.obj);
+              sessionStorage.setItem("user", JSON.stringify(res.obj));
+              let path = this.$route.query.redirect;
+              this.$router.replace(
+                path == "/" || path == undefined ? "/home" : path
+              );
             }
-            console.log(res)
-          })
+            console.log(res);
+          });
         } else {
           console.log("error submit!!");
           return false;
@@ -90,7 +94,7 @@ export default {
     width: 400px;
     padding: 29px 75px 30px 10px;
     box-shadow: 0 0 20px 6px #00000052;
-    h2{
+    h2 {
       margin-left: 90px;
     }
   }

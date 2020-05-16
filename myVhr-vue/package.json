@@ -14,10 +14,12 @@
   "dependencies": {
     "axios": "^0.19.2",
     "element-ui": "^2.13.1",
+    "font-awesome": "^4.7.0",
     "less": "^3.11.1",
     "less-loader": "^4.1.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
