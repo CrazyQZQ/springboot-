@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ExamsSubjectMapper">
+    
+    <resultMap type="ExamsSubject" id="ExamsSubjectResult">
+        <result property="subjectId"    column="subject_id"    />
+        <result property="grandId"    column="grand_id"    />
+        <result property="subjectName"    column="subject_name"    />
+        <result property="grandName"    column="grand_name"    />
+    </resultMap>
+
+    <sql id="selectExamsSubjectVo">
+        select subject_id, grand_id, subject_name,  dict_label as grand_name from exams_subject subject
+        inner join sys_dict_data dict on subject.grand_id = dict.dict_code
+    </sql>
+
+    <select id="selectExamsSubjectList" parameterType="ExamsSubject" resultMap="ExamsSubjectResult">
+        <include refid="selectExamsSubjectVo"/>
+        <where>  
+            <if test="grandId != null "> and grand_id = #{grandId}</if>
+            <if test="subjectName != null  and subjectName != ''"> and subject_name like concat('%', #{subjectName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectExamsSubjectById" parameterType="Long" resultMap="ExamsSubjectResult">
+        <include refid="selectExamsSubjectVo"/>
+        where subject_id = #{subjectId}
+    </select>
+        
+    <insert id="insertExamsSubject" parameterType="ExamsSubject">
+        insert into exams_subject
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="subjectId != null">subject_id,</if>
+            <if test="grandId != null">grand_id,</if>
+            <if test="subjectName != null and subjectName != ''">subject_name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="subjectId != null">#{subjectId},</if>
+            <if test="grandId != null">#{grandId},</if>
+            <if test="subjectName != null and subjectName != ''">#{subjectName},</if>
+         </trim>
+    </insert>
+
+    <update id="updateExamsSubject" parameterType="ExamsSubject">
+        update exams_subject
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="grandId != null">grand_id = #{grandId},</if>
+            <if test="subjectName != null and subjectName != ''">subject_name = #{subjectName},</if>
+        </trim>
+        where subject_id = #{subjectId}
+    </update>
+
+    <delete id="deleteExamsSubjectById" parameterType="Long">
+        delete from exams_subject where subject_id = #{subjectId}
+    </delete>
+
+    <delete id="deleteExamsSubjectByIds" parameterType="String">
+        delete from exams_subject where subject_id in 
+        <foreach item="subjectId" collection="array" open="(" separator="," close=")">
+            #{subjectId}
+        </foreach>
+    </delete>
+    
+</mapper>

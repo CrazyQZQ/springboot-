@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ExamsQuestionMapper">
+    
+    <resultMap type="ExamsQuestion" id="ExamsQuestionResult">
+        <result property="id"    column="id"    />
+        <result property="subjectId"    column="subject_id"    />
+        <result property="createDate"    column="create_date"    />
+        <result property="updateDate"    column="update_date"    />
+        <result property="answer"    column="answer"    />
+        <result property="content"    column="content"    />
+        <result property="questionType"    column="question_type"    />
+        <result property="options"    column="options"    />
+        <result property="analysis"    column="analysis"    />
+        <result property="summarize"    column="summarize"    />
+        <result property="languagePointsId"    column="language_points_id"    />
+        <result property="typeName"    column="type_name"    />
+        <result property="subjectName"    column="subject_name"    />
+        <result property="subjectName"    column="subject_name"    />
+        <result property="grandName"    column="grand_name"    />
+        <result property="title"    column="title"    />
+    </resultMap>
+
+    <sql id="selectExamsQuestionVo">
+        select id, question.subject_id, create_date, update_date, answer, content,
+        question_type, options, analysis, summarize, language_points_id,title,
+        dict_label as type_name,
+        subject_name,
+        grand_name
+        from exams_question question
+        left join (select subject_id, subject_name, dict_label as grand_name from exams_subject subject
+        inner join sys_dict_data dict on subject.grand_id = dict.dict_code) subject
+        on question.subject_id = subject.subject_id
+        left join sys_dict_data dict on question.question_type = dict.dict_code
+    </sql>
+
+    <select id="selectExamsQuestionList" parameterType="ExamsQuestion" resultMap="ExamsQuestionResult">
+        <include refid="selectExamsQuestionVo"/>
+        <where>  
+            <if test="subjectId != null "> and subject_id = #{subjectId}</if>
+            <if test="createDate != null "> and create_date = #{createDate}</if>
+            <if test="updateDate != null "> and update_date = #{updateDate}</if>
+            <if test="answer != null  and answer != ''"> and answer = #{answer}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="questionType != null  and questionType != ''"> and question_type = #{questionType}</if>
+            <if test="options != null  and options != ''"> and options = #{options}</if>
+            <if test="analysis != null  and analysis != ''"> and analysis = #{analysis}</if>
+            <if test="summarize != null  and summarize != ''"> and summarize = #{summarize}</if>
+            <if test="languagePointsId != null "> and language_points_id = #{languagePointsId}</if>
+            <if test="title != null "> and title = #{title}</if>
+        </where>
+    </select>
+    
+    <select id="selectExamsQuestionById" parameterType="Long" resultMap="ExamsQuestionResult">
+        <include refid="selectExamsQuestionVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertExamsQuestion" parameterType="ExamsQuestion">
+        insert into exams_question
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="subjectId != null">subject_id,</if>
+            <if test="createDate != null">create_date,</if>
+            <if test="updateDate != null">update_date,</if>
+            <if test="answer != null">answer,</if>
+            <if test="content != null">content,</if>
+            <if test="questionType != null">question_type,</if>
+            <if test="options != null">options,</if>
+            <if test="analysis != null">analysis,</if>
+            <if test="summarize != null">summarize,</if>
+            <if test="languagePointsId != null">language_points_id,</if>
+            <if test="title != null">title,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="subjectId != null">#{subjectId},</if>
+            <if test="title != null">#{title},</if>
+            <if test="createDate != null">#{createDate},</if>
+            <if test="updateDate != null">#{updateDate},</if>
+            <if test="answer != null">#{answer},</if>
+            <if test="content != null">#{content},</if>
+            <if test="questionType != null">#{questionType},</if>
+            <if test="options != null">#{options},</if>
+            <if test="analysis != null">#{analysis},</if>
+            <if test="summarize != null">#{summarize},</if>
+            <if test="languagePointsId != null">#{languagePointsId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateExamsQuestion" parameterType="ExamsQuestion">
+        update exams_question
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="subjectId != null">subject_id = #{subjectId},</if>
+            <if test="createDate != null">create_date = #{createDate},</if>
+            <if test="updateDate != null">update_date = #{updateDate},</if>
+            <if test="answer != null">answer = #{answer},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="questionType != null">question_type = #{questionType},</if>
+            <if test="options != null">options = #{options},</if>
+            <if test="analysis != null">analysis = #{analysis},</if>
+            <if test="summarize != null">summarize = #{summarize},</if>
+            <if test="languagePointsId != null">language_points_id = #{languagePointsId},</if>
+            <if test="title != null">title = #{title},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteExamsQuestionById" parameterType="Long">
+        delete from exams_question where id = #{id}
+    </delete>
+
+    <delete id="deleteExamsQuestionByIds" parameterType="String">
+        delete from exams_question where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>
