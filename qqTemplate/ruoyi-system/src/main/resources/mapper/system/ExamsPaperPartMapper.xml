@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ExamsPaperPartMapper">
+    
+    <resultMap type="ExamsPaperPart" id="ExamsPaperPartResult">
+        <result property="id"    column="id"    />
+        <result property="paperId"    column="paper_id"    />
+        <result property="partId"    column="part_id"    />
+        <result property="sort"    column="sort"    />
+        <!-- 这是映射 -->
+        <association property="part" javaType="ExamsPart">
+            <result property="id"    column="part_id"    />
+            <result property="questionType"    column="question_type"    />
+            <result property="discrib"    column="discrib"    />
+            <result property="typeName"    column="type_name"    />
+        </association>
+    </resultMap>
+
+    <sql id="selectExamsPaperPartVo">
+        SELECT
+            paper_part.id,
+            paper_part.part_id,
+            paper_part.sort,
+            part.question_type,
+            part.discrib,
+            part.dict_label as type_name
+        FROM
+            exams_paper_part paper_part
+            LEFT JOIN ( SELECT exams_part.*, dict.dict_label FROM exams_part LEFT JOIN sys_dict_data dict ON dict.dict_code = exams_part.question_type ) part ON paper_part.part_id = part.id
+    </sql>
+
+    <select id="selectExamsPaperPartList" parameterType="ExamsPaperPart" resultMap="ExamsPaperPartResult">
+        <include refid="selectExamsPaperPartVo"/>
+        <where>  
+            <if test="paperId != null "> and paper_id = #{paperId}</if>
+            <if test="partId != null "> and part_id = #{partId}</if>
+            <if test="sort != null "> and sort = #{sort}</if>
+        </where>
+    </select>
+    
+    <select id="selectExamsPaperPartById" parameterType="Long" resultMap="ExamsPaperPartResult">
+        <include refid="selectExamsPaperPartVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertExamsPaperPart" parameterType="ExamsPaperPart" useGeneratedKeys="true" keyProperty="id">
+        insert into exams_paper_part
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="paperId != null">paper_id,</if>
+            <if test="partId != null">part_id,</if>
+            <if test="sort != null">sort,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="paperId != null">#{paperId},</if>
+            <if test="partId != null">#{partId},</if>
+            <if test="sort != null">#{sort},</if>
+         </trim>
+    </insert>
+
+    <update id="updateExamsPaperPart" parameterType="ExamsPaperPart">
+        update exams_paper_part
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="paperId != null">paper_id = #{paperId},</if>
+            <if test="partId != null">part_id = #{partId},</if>
+            <if test="sort != null">sort = #{sort},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteExamsPaperPartById" parameterType="Long">
+        delete from exams_paper_part where id = #{id}
+    </delete>
+
+    <delete id="deleteExamsPaperPartByIds" parameterType="String">
+        delete from exams_paper_part where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

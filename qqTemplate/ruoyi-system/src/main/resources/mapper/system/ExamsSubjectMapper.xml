@@ -20,6 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectExamsSubjectVo"/>
         <where>  
             <if test="grandId != null "> and grand_id = #{grandId}</if>
+            <if test="subjectId != null "> and subject_id = #{subjectId}</if>
             <if test="subjectName != null  and subjectName != ''"> and subject_name like concat('%', #{subjectName}, '%')</if>
         </where>
     </select>

@@ -1,5 +1,6 @@
 package com.ruoyi.system.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,7 @@ public class ExamsQuestionServiceImpl implements IExamsQuestionService
     @Override
     public int insertExamsQuestion(ExamsQuestion examsQuestion)
     {
+        examsQuestion.setCreateDate(new Date());
         return examsQuestionMapper.insertExamsQuestion(examsQuestion);
     }
 
@@ -64,6 +66,7 @@ public class ExamsQuestionServiceImpl implements IExamsQuestionService
     @Override
     public int updateExamsQuestion(ExamsQuestion examsQuestion)
     {
+        examsQuestion.setUpdateDate(new Date());
         return examsQuestionMapper.updateExamsQuestion(examsQuestion);
     }
 

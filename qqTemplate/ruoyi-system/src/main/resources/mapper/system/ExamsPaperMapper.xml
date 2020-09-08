@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ExamsPaperMapper">
+    
+    <resultMap type="ExamsPaper" id="ExamsPaperResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="schoolId"    column="school_id"    />
+        <result property="grandId"    column="grand_id"    />
+        <result property="subjectId"    column="subject_id"    />
+        <result property="createDate"    column="create_date"    />
+        <result property="updateDate"    column="update_date"    />
+    </resultMap>
+
+    <sql id="selectExamsPaperVo">
+        select id, name, school_id, grand_id, subject_id, create_date, update_date from exams_paper
+    </sql>
+
+    <select id="selectExamsPaperList" parameterType="ExamsPaper" resultMap="ExamsPaperResult">
+        <include refid="selectExamsPaperVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="schoolId != null "> and school_id = #{schoolId}</if>
+            <if test="grandId != null "> and grand_id = #{grandId}</if>
+            <if test="subjectId != null "> and subject_id = #{subjectId}</if>
+            <if test="createDate != null "> and create_date = #{createDate}</if>
+            <if test="updateDate != null "> and update_date = #{updateDate}</if>
+        </where>
+    </select>
+    
+    <select id="selectExamsPaperById" parameterType="Long" resultMap="ExamsPaperResult">
+        <include refid="selectExamsPaperVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertExamsPaper" parameterType="ExamsPaper" useGeneratedKeys="true" keyProperty="id">
+        insert into exams_paper
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">name,</if>
+            <if test="schoolId != null">school_id,</if>
+            <if test="grandId != null">grand_id,</if>
+            <if test="subjectId != null">subject_id,</if>
+            <if test="createDate != null">create_date,</if>
+            <if test="updateDate != null">update_date,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="schoolId != null">#{schoolId},</if>
+            <if test="grandId != null">#{grandId},</if>
+            <if test="subjectId != null">#{subjectId},</if>
+            <if test="createDate != null">#{createDate},</if>
+            <if test="updateDate != null">#{updateDate},</if>
+         </trim>
+    </insert>
+
+    <update id="updateExamsPaper" parameterType="ExamsPaper">
+        update exams_paper
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="schoolId != null">school_id = #{schoolId},</if>
+            <if test="grandId != null">grand_id = #{grandId},</if>
+            <if test="subjectId != null">subject_id = #{subjectId},</if>
+            <if test="createDate != null">create_date = #{createDate},</if>
+            <if test="updateDate != null">update_date = #{updateDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteExamsPaperById" parameterType="Long">
+        delete from exams_paper where id = #{id}
+    </delete>
+
+    <delete id="deleteExamsPaperByIds" parameterType="String">
+        delete from exams_paper where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

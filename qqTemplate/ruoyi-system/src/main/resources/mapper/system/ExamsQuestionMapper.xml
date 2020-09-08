@@ -39,7 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectExamsQuestionList" parameterType="ExamsQuestion" resultMap="ExamsQuestionResult">
         <include refid="selectExamsQuestionVo"/>
         <where>  
-            <if test="subjectId != null "> and subject_id = #{subjectId}</if>
+            <if test="subjectId != null "> and question.subject_id = #{subjectId}</if>
             <if test="createDate != null "> and create_date = #{createDate}</if>
             <if test="updateDate != null "> and update_date = #{updateDate}</if>
             <if test="answer != null  and answer != ''"> and answer = #{answer}</if>

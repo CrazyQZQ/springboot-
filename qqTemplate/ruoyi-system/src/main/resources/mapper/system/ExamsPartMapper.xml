@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ExamsPartMapper">
+    
+    <resultMap type="ExamsPart" id="ExamsPartResult">
+        <result property="id"    column="id"    />
+        <result property="questionType"    column="question_type"    />
+        <result property="discrib"    column="discrib"    />
+    </resultMap>
+
+    <sql id="selectExamsPartVo">
+        select id, question_type, discrib from exams_part
+    </sql>
+
+    <select id="selectExamsPartList" parameterType="ExamsPart" resultMap="ExamsPartResult">
+        <include refid="selectExamsPartVo"/>
+        <where>  
+            <if test="questionType != null "> and question_type = #{questionType}</if>
+            <if test="discrib != null  and discrib != ''"> and discrib = #{discrib}</if>
+        </where>
+    </select>
+    
+    <select id="selectExamsPartById" parameterType="Long" resultMap="ExamsPartResult">
+        <include refid="selectExamsPartVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertExamsPart" parameterType="ExamsPart" useGeneratedKeys="true" keyProperty="id">
+        insert into exams_part
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="questionType != null">question_type,</if>
+            <if test="discrib != null">discrib,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="questionType != null">#{questionType},</if>
+            <if test="discrib != null">#{discrib},</if>
+         </trim>
+    </insert>
+
+    <update id="updateExamsPart" parameterType="ExamsPart">
+        update exams_part
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="questionType != null">question_type = #{questionType},</if>
+            <if test="discrib != null">discrib = #{discrib},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteExamsPartById" parameterType="Long">
+        delete from exams_part where id = #{id}
+    </delete>
+
+    <delete id="deleteExamsPartByIds" parameterType="String">
+        delete from exams_part where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

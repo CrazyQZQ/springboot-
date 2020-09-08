@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.ExamsPartQuestionMapper">
+    
+    <resultMap type="ExamsPartQuestion" id="ExamsPartQuestionResult">
+        <result property="id"    column="id"    />
+        <result property="partId"    column="part_id"    />
+        <result property="questionId"    column="question_id"    />
+        <result property="sort"    column="sort"    />
+        <!-- 这是映射 -->
+        <association property="question" javaType="ExamsQuestion">
+            <result property="id"    column="question_id"    />
+            <result property="answer"    column="answer"    />
+            <result property="content"    column="content"    />
+            <result property="title"    column="title"    />
+        </association>
+    </resultMap>
+
+    <sql id="selectExamsPartQuestionVo">
+        SELECT
+            part_question.id,
+            part_question.sort,
+            question.id AS question_id,
+            question.title,
+            question.content,
+            question.answer
+        FROM
+            exams_part_question part_question
+            LEFT JOIN exams_question question ON part_question.question_id = question.id
+    </sql>
+
+    <select id="selectExamsPartQuestionList" parameterType="ExamsPartQuestion" resultMap="ExamsPartQuestionResult">
+        <include refid="selectExamsPartQuestionVo"/>
+        <where>  
+            <if test="partId != null "> and part_id = #{partId}</if>
+            <if test="questionId != null "> and question_id = #{questionId}</if>
+            <if test="sort != null "> and sort = #{sort}</if>
+        </where>
+    </select>
+    
+    <select id="selectExamsPartQuestionById" parameterType="Long" resultMap="ExamsPartQuestionResult">
+        <include refid="selectExamsPartQuestionVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertExamsPartQuestion" parameterType="ExamsPartQuestion" useGeneratedKeys="true" keyProperty="id">
+        insert into exams_part_question
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="partId != null">part_id,</if>
+            <if test="questionId != null">question_id,</if>
+            <if test="sort != null">sort,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="partId != null">#{partId},</if>
+            <if test="questionId != null">#{questionId},</if>
+            <if test="sort != null">#{sort},</if>
+         </trim>
+    </insert>
+
+    <update id="updateExamsPartQuestion" parameterType="ExamsPartQuestion">
+        update exams_part_question
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="partId != null">part_id = #{partId},</if>
+            <if test="questionId != null">question_id = #{questionId},</if>
+            <if test="sort != null">sort = #{sort},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteExamsPartQuestionById" parameterType="Long">
+        delete from exams_part_question where id = #{id}
+    </delete>
+
+    <delete id="deleteExamsPartQuestionByIds" parameterType="String">
+        delete from exams_part_question where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>
