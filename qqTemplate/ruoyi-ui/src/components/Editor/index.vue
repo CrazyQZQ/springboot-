@@ -40,7 +40,7 @@ const toolbarOptions = [
   [{ color: [] }, { background: [] }],             // 字体颜色、字体背景颜色
   [{ align: [] }],                                 // 对齐方式
   ["clean"],                                       // 清除文本格式
-  ["link", "image", "video"]                       // 链接、图片、视频
+  ["link", "image", "video" ,"strikethrough"]      // 链接、图片、视频
 ];
 
 import { quillEditor } from "vue-quill-editor";
@@ -72,6 +72,7 @@ export default {
         modules: {
           toolbar: {
             container: toolbarOptions,
+            plugins: 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template code codesample table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists wordcount imagetools textpattern help emoticons autosave bdmap indent2em autoresize lineheight formatpainter axupimgs',
             handlers: {
               image: function(value) {
                 if (value) {
@@ -82,7 +83,7 @@ export default {
                 }
               }
             }
-          }
+          },
         }
       },
       uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
@@ -142,7 +143,7 @@ export default {
     }
   }
 };
-</script> 
+</script>
 
 <style>
 .editor {
