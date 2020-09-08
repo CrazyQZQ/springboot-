@@ -2,22 +2,24 @@
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="68px">
       <el-form-item label="年级" prop="grandId">
-        <el-input
-          v-model="queryParams.grandId"
-          placeholder="请输入年级"
-          clearable
-          size="small"
-          @keyup.enter.native="handleQuery"
-        />
+        <el-select v-model="queryParams.grandId" placeholder="请选择课程">
+          <el-option
+            v-for="item in grandList"
+            :key="item.dictCode"
+            :label="item.dictLabel"
+            :value="item.dictCode">
+          </el-option>
+        </el-select>
       </el-form-item>
       <el-form-item label="科目" prop="subjectName">
-        <el-input
-          v-model="queryParams.subjectName"
-          placeholder="请输入$科目"
-          clearable
-          size="small"
-          @keyup.enter.native="handleQuery"
-        />
+        <el-select v-model="queryParams.subjectId" placeholder="请选择科目">
+          <el-option
+            v-for="item in subjects"
+            :key="item.subjectId"
+            :label="item.subjectName"
+            :value="item.subjectId">
+          </el-option>
+        </el-select>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
@@ -102,11 +104,18 @@
     <!-- 添加或修改【请填写功能名称】对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="${comment}" prop="grandId">
-          <el-input v-model="form.grandId" placeholder="请输入${comment}" />
+        <el-form-item label="年级" prop="grandId">
+          <el-select v-model="form.grandId" placeholder="请选择课程">
+            <el-option
+              v-for="item in grandList"
+              :key="item.dictCode"
+              :label="item.dictLabel"
+              :value="item.dictCode">
+            </el-option>
+          </el-select>
         </el-form-item>
-        <el-form-item label="${comment}" prop="subjectName">
-          <el-input v-model="form.subjectName" placeholder="请输入${comment}" />
+        <el-form-item label="科目名称" prop="subjectName">
+          <el-input v-model="form.subjectName" placeholder="请输入科目名称" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -119,7 +128,6 @@
 
 <script>
   import { listSubject, getSubject, delSubject, addSubject, updateSubject, exportSubject } from "@/api/exams/subject";
-
   export default {
     name: "Subject",
     data() {
@@ -153,16 +161,24 @@
         // 表单校验
         rules: {
           grandId: [
-            { required: true, message: "$comment不能为空", trigger: "blur" }
+            { required: true, message: "年级不能为空", trigger: "blur" }
           ],
           subjectName: [
-            { required: true, message: "$comment不能为空", trigger: "blur" }
+            { required: true, message: "科目不能为空", trigger: "blur" }
           ]
-        }
+        },
+        grandList: [],
+        subjects:[]
       };
     },
     created() {
       this.getList();
+      this.getDicts("sys_grand").then(response => {
+        this.grandList = response.data
+      });
+      listSubject().then(response => {
+        this.subjects = response.rows
+      });
     },
     methods: {
       /** 查询【请填写功能名称】列表 */

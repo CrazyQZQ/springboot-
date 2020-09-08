@@ -1,174 +1,152 @@
 <template>
   <div class="app-container">
-    <Editor v-model="form.noticeContent" />
+    <el-col :span="20">
+      <el-form ref="form" :model="form" :rules="rules" label-width="120px" size="small">
+        <el-form-item label="科目">
+          <el-select v-model="form.subjectId" placeholder="请选择科目">
+            <el-option
+              v-for="item in subjects"
+              :key="item.subjectId"
+              :label="item.grandName + '-' + item.subjectName"
+              :value="item.subjectId">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="标题" prop="title">
+          <el-input v-model="form.title" placeholder="请输入标题"/>
+        </el-form-item>
+        <el-form-item label="试题类型">
+          <el-select v-model="form.questionType" placeholder="请选择试题类型">
+            <el-option
+              v-for="item in questionTypes"
+              :key="item.dictCode"
+              :label="item.dictLabel"
+              :value="item.dictCode">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="试题内容">
+          <Tinymce ref="editor" v-model="form.content" :height="300"/>
+        </el-form-item>
+        <el-form-item label="答案" prop="answer">
+          <el-input v-model="form.answer" placeholder="请输入答案" type="textarea"/>
+        </el-form-item>
+        <el-form-item label="试题解析内容" prop="analysis">
+          <el-input v-model="form.analysis" placeholder="请输入试题解析内容" type="textarea"/>
+        </el-form-item>
+        <el-form-item label="总结升华" prop="summarize">
+          <el-input v-model="form.summarize" placeholder="请输入总结升华" type="textarea"/>
+        </el-form-item>
+      </el-form>
+    </el-col>
+    <el-col :span="4">
+      <el-button type="primary" @click="submitForm">确 定</el-button>
+      <el-button @click="cancel">取 消</el-button>
+    </el-col>
   </div>
 </template>
 
 <script>
-
-  import Editor from '@/components/Editor';
-
+  import { listQuestion, getQuestion, delQuestion, addQuestion, updateQuestion, exportQuestion } from "@/api/exams/question";
+  import Tinymce from '@/components/Tinymce'
+  import { listSubject } from "@/api/exams/subject";
   export default {
     name: "Notice",
     components: {
-      Editor
+      Tinymce
     },
     data() {
       return {
-        // 遮罩层
-        loading: true,
-        // 选中数组
-        ids: [],
-        // 非单个禁用
-        single: true,
-        // 非多个禁用
-        multiple: true,
-        // 总条数
-        total: 0,
-        // 公告表格数据
-        noticeList: [],
-        // 弹出层标题
-        title: "",
-        // 是否显示弹出层
-        open: false,
-        // 类型数据字典
-        statusOptions: [],
-        // 状态数据字典
-        typeOptions: [],
-        // 查询参数
-        queryParams: {
-          pageNum: 1,
-          pageSize: 10,
-          noticeTitle: undefined,
-          createBy: undefined,
-          status: undefined
-        },
         // 表单参数
         form: {},
+        questionTypes:[],
+        subjects:[],
         // 表单校验
         rules: {
-          noticeTitle: [
-            { required: true, message: "公告标题不能为空", trigger: "blur" }
+          subjectId: [
+            { required: true, message: "科目名称不能为空", trigger: "change" }
           ],
-          noticeType: [
-            { required: true, message: "公告类型不能为空", trigger: "blur" }
-          ]
-        }
+          questionType: [
+            { required: true, message: "题型不能为空", trigger: "change" }
+          ],
+          content: [
+            { required: true, message: "试题内容不能为空", trigger: "blur" }
+          ],
+          answer: [
+            { required: true, message: "答案不能为空", trigger: "blur" }
+          ],
+          title: [
+            { required: true, message: "标题不能为空", trigger: "blur" }
+          ],
+        },
       };
     },
     created() {
-      this.getList();
-      this.getDicts("sys_notice_status").then(response => {
-        this.statusOptions = response.data;
+      this.getDicts("sys_question_type").then(response => {
+        this.questionTypes = response.data
       });
-      this.getDicts("sys_notice_type").then(response => {
-        this.typeOptions = response.data;
+      listSubject().then(response => {
+        this.subjects = response.rows
       });
     },
-    methods: {
-      /** 查询公告列表 */
-      getList() {
-        this.loading = true;
-        listNotice(this.queryParams).then(response => {
-          this.noticeList = response.rows;
-          this.total = response.total;
-          this.loading = false;
+    mounted() {
+      let id = this.$route.params.id
+      if(id){
+        getQuestion(id).then(response => {
+          console.log(response)
+          response.data.questionType = parseInt(response.data.questionType)
+          this.form = response.data;
+          this.form.subjectName = this.form.grandName+"-"+this.form.subjectName
         });
-      },
-      // 公告状态字典翻译
-      statusFormat(row, column) {
-        return this.selectDictLabel(this.statusOptions, row.status);
-      },
-      // 公告状态字典翻译
-      typeFormat(row, column) {
-        return this.selectDictLabel(this.typeOptions, row.noticeType);
-      },
+      }else {
+        this.reset()
+      }
+    },
+    methods: {
       // 取消按钮
       cancel() {
-        this.open = false;
-        this.reset();
+        this.$router.push({ name: 'Questions'})
       },
       // 表单重置
       reset() {
         this.form = {
-          noticeId: undefined,
-          noticeTitle: undefined,
-          noticeType: undefined,
-          noticeContent: undefined,
-          status: "0"
+          id: undefined,
+          subjectId: undefined,
+          createDate: undefined,
+          updateDate: undefined,
+          answer: undefined,
+          content: undefined,
+          questionType: undefined,
+          options: undefined,
+          analysis: undefined,
+          summarize: undefined,
+          languagePointsId: undefined
         };
         this.resetForm("form");
       },
-      /** 搜索按钮操作 */
-      handleQuery() {
-        this.queryParams.pageNum = 1;
-        this.getList();
-      },
-      /** 重置按钮操作 */
-      resetQuery() {
-        this.resetForm("queryForm");
-        this.handleQuery();
-      },
-      // 多选框选中数据
-      handleSelectionChange(selection) {
-        this.ids = selection.map(item => item.noticeId)
-        this.single = selection.length!=1
-        this.multiple = !selection.length
-      },
-      /** 新增按钮操作 */
-      handleAdd() {
-        this.reset();
-        this.open = true;
-        this.title = "添加公告";
-      },
-      /** 修改按钮操作 */
-      handleUpdate(row) {
-        this.reset();
-        const noticeId = row.noticeId || this.ids
-        getNotice(noticeId).then(response => {
-          this.form = response.data;
-          this.open = true;
-          this.title = "修改公告";
-        });
-      },
       /** 提交按钮 */
       submitForm: function() {
+        console.log(this.form)
         this.$refs["form"].validate(valid => {
           if (valid) {
-            if (this.form.noticeId != undefined) {
-              updateNotice(this.form).then(response => {
+            if (this.form.id != undefined) {
+              updateQuestion(this.form).then(response => {
                 if (response.code === 200) {
                   this.msgSuccess("修改成功");
-                  this.open = false;
-                  this.getList();
+                  this.$router.push({ name: 'Questions'})
                 }
               });
             } else {
-              addNotice(this.form).then(response => {
+              addQuestion(this.form).then(response => {
                 if (response.code === 200) {
                   this.msgSuccess("新增成功");
-                  this.open = false;
-                  this.getList();
+                  this.$router.push({ name: 'Questions'})
                 }
               });
             }
           }
         });
       },
-      /** 删除按钮操作 */
-      handleDelete(row) {
-        const noticeIds = row.noticeId || this.ids
-        this.$confirm('是否确认删除公告编号为"' + noticeIds + '"的数据项?', "警告", {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
-          type: "warning"
-        }).then(function() {
-          return delNotice(noticeIds);
-        }).then(() => {
-          this.getList();
-          this.msgSuccess("删除成功");
-        }).catch(function() {});
-      }
     }
   };
 </script>

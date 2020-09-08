@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="68px">
-      <el-form-item label="课程名称" prop="subjectId">
-        <el-select v-model="queryParams.subjectId" placeholder="请选择课程">
+      <el-form-item label="科目名称" prop="subjectId">
+        <el-select v-model="queryParams.subjectId" placeholder="请选择科目">
           <el-option
             v-for="item in subjects"
             :key="item.subjectId"
@@ -49,20 +49,20 @@
           type="primary"
           icon="el-icon-plus"
           size="mini"
-          @click="handleAdd"
+          @click="toDetail"
           v-hasPermi="['system:question:add']"
         >新增</el-button>
       </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="success"
-          icon="el-icon-edit"
-          size="mini"
-          :disabled="single"
-          @click="handleUpdate"
-          v-hasPermi="['system:question:edit']"
-        >修改</el-button>
-      </el-col>
+<!--      <el-col :span="1.5">-->
+<!--        <el-button-->
+<!--          type="success"-->
+<!--          icon="el-icon-edit"-->
+<!--          size="mini"-->
+<!--          :disabled="single"-->
+<!--          @click="handleUpdate"-->
+<!--          v-hasPermi="['system:question:edit']"-->
+<!--        >修改</el-button>-->
+<!--      </el-col>-->
       <el-col :span="1.5">
         <el-button
           type="danger"
@@ -88,7 +88,7 @@
       <el-table-column type="selection" width="55" align="center" />
       <el-table-column label="ID" align="center" prop="id" width="65"/>
       <el-table-column label="标题" align="center" prop="title" />
-      <el-table-column label="课程名称" align="center" prop="subjectId">
+      <el-table-column label="科目名称" align="center" prop="subjectId">
         <template slot-scope="scope">
           <span>{{ scope.row.grandName + '-' + scope.row.subjectName }}</span>
         </template>
@@ -119,7 +119,7 @@
             size="mini"
             type="text"
             icon="el-icon-edit"
-            @click="handleUpdate(scope.row)"
+            @click="toDetail(scope.row)"
             v-hasPermi="['system:question:edit']"
           >修改</el-button>
           <el-button
@@ -141,49 +141,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改【请填写功能名称】对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body>
-      <el-form ref="form" :model="form" :rules="rules" label-width="120px">
-        <el-form-item label="课程">
-          <el-select v-model="form.subjectId" placeholder="请选择课程">
-            <el-option
-              v-for="item in subjects"
-              :key="item.subjectId"
-              :label="item.grandName + '-' + item.subjectName"
-              :value="item.subjectId">
-            </el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="试题类型">
-          <el-select v-model="form.questionType" placeholder="请选择试题类型">
-            <el-option
-              v-for="item in questionTypes"
-              :key="item.dictCode"
-              :label="item.dictLabel"
-              :value="item.dictCode">
-            </el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="试题内容">
-          <Editor v-model="form.content" />
-        </el-form-item>
-        <el-form-item label="答案" prop="answer" style="margin-top: 62px;">
-          <el-input v-model="form.answer" placeholder="请输入答案" type="textarea"/>
-        </el-form-item>
-        <el-form-item label="试题解析内容" prop="analysis">
-          <el-input v-model="form.analysis" placeholder="请输入试题解析内容" />
-        </el-form-item>
-        <el-form-item label="总结升华" prop="summarize">
-          <el-input v-model="form.summarize" placeholder="请输入总结升华" />
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm">确 定</el-button>
-        <el-button @click="cancel">取 消</el-button>
-      </div>
-    </el-dialog>
-
-    <!-- 添加或修改【请填写功能名称】对话框 -->
+    <!-- 添加或修改试题对话框 -->
     <el-dialog title="预览" :visible.sync="openPreview" width="500px" append-to-body>
       <div v-html="previewQuestion.content"></div>
     </el-dialog>
@@ -192,12 +150,13 @@
 
 <script>
   import { listQuestion, getQuestion, delQuestion, addQuestion, updateQuestion, exportQuestion } from "@/api/exams/question";
-  import { listData } from "@/api/system/dict/data";
   import { listSubject } from "@/api/exams/subject";
   import Editor from '@/components/Editor';
+  import Tinymce from '@/components/Tinymce'
   export default {
     name: "Question",
     components: {
+      Tinymce,
       Editor
     },
     data() {
@@ -212,7 +171,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 【请填写功能名称】表格数据
+        // 试题表格数据
         questionList: [],
         // 弹出层标题
         title: "",
@@ -237,12 +196,6 @@
         subjects:[],
         // 表单参数
         form: {},
-        // 表单校验
-        rules: {
-          subjectId: [
-            { required: true, message: "课程名称不能为空", trigger: "blur" }
-          ],
-        },
         previewQuestion: {
           content:undefined
         },
@@ -251,17 +204,15 @@
     },
     created() {
       this.getList();
-      // this.getTypeList();
       this.getDicts("sys_question_type").then(response => {
         this.questionTypes = response.data
-        console.log(this.questionTypes)
       });
       listSubject().then(response => {
         this.subjects = response.rows
       });
     },
     methods: {
-      /** 查询【请填写功能名称】列表 */
+      /** 查询试题列表 */
       getList() {
         this.loading = true;
         listQuestion(this.queryParams).then(response => {
@@ -308,23 +259,9 @@
         this.single = selection.length!=1
         this.multiple = !selection.length
       },
-      /** 新增按钮操作 */
-      handleAdd() {
-        this.reset();
-        this.open = true;
-        this.title = "添加";
-      },
       /** 修改按钮操作 */
-      handleUpdate(row) {
-        this.reset();
-        const id = row.id || this.ids
-        getQuestion(id).then(response => {
-          response.data.questionType = parseInt(response.data.questionType)
-          this.form = response.data;
-          this.form.subjectName = this.form.grandName+"-"+this.form.subjectName
-          this.open = true;
-          this.title = "编辑";
-        });
+      toDetail(row) {
+        this.$router.push({ name: 'Detail', params: { id: row.id ? row.id : null }})
       },
       preview(row) {
         this.reset();
@@ -334,35 +271,10 @@
           this.openPreview = true
         });
       },
-      /** 提交按钮 */
-      submitForm: function() {
-        console.log(this.form)
-        this.$refs["form"].validate(valid => {
-          if (valid) {
-            if (this.form.id != undefined) {
-              updateQuestion(this.form).then(response => {
-                if (response.code === 200) {
-                  this.msgSuccess("修改成功");
-                  this.open = false;
-                  this.getList();
-                }
-              });
-            } else {
-              addQuestion(this.form).then(response => {
-                if (response.code === 200) {
-                  this.msgSuccess("新增成功");
-                  this.open = false;
-                  this.getList();
-                }
-              });
-            }
-          }
-        });
-      },
       /** 删除按钮操作 */
       handleDelete(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除【请填写功能名称】编号为"' + ids + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除试题编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -376,7 +288,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有【请填写功能名称】数据项?', "警告", {
+        this.$confirm('是否确认导出所有试题数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -385,15 +297,7 @@
         }).then(response => {
           this.download(response.msg);
         }).catch(function() {});
-      },
-      /** 查询字典数据列表 */
-      getTypeList() {
-        let params = {dictType:"sys_question_type"}
-        listData(params).then(response => {
-          this.questionTypes = response.rows
-          console.log(this.questionTypes)
-        });
-      },
+      }
     }
   };
 </script>
