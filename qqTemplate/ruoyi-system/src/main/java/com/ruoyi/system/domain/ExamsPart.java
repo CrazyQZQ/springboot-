@@ -18,7 +18,7 @@ public class ExamsPart extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** $column.columnComment */
-    private Long id;
+    private String id;
 
     /** 题型 */
     @Excel(name = "题型")
@@ -28,17 +28,23 @@ public class ExamsPart extends BaseEntity
     @Excel(name = "描述")
     private String discrib;
 
-    private List<ExamsPartQuestion> questions;
+    private List<ExamsPartQuestion> partQuestions;
+
+    private List<ExamsQuestion> questions;
 
     @Excel(name = "题型")
     private String typeName;
 
-    public void setId(Long id) 
+    private Integer sort;
+
+    private Double partScore;
+
+    public void setId(String id)
     {
         this.id = id;
     }
 
-    public Long getId() 
+    public String getId()
     {
         return id;
     }
@@ -61,20 +67,44 @@ public class ExamsPart extends BaseEntity
         return discrib;
     }
 
-    public List<ExamsPartQuestion> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<ExamsPartQuestion> questions) {
-        this.questions = questions;
-    }
-
     public String getTypeName() {
         return typeName;
     }
 
     public void setTypeName(String typeName) {
         this.typeName = typeName;
+    }
+
+    public List<ExamsPartQuestion> getPartQuestions() {
+        return partQuestions;
+    }
+
+    public void setPartQuestions(List<ExamsPartQuestion> partQuestions) {
+        this.partQuestions = partQuestions;
+    }
+
+    public List<ExamsQuestion> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<ExamsQuestion> questions) {
+        this.questions = questions;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    public Double getPartScore() {
+        return partScore;
+    }
+
+    public void setPartScore(Double partScore) {
+        this.partScore = partScore;
     }
 
     @Override

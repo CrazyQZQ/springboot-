@@ -7,8 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <resultMap type="ExamsQuestion" id="ExamsQuestionResult">
         <result property="id"    column="id"    />
         <result property="subjectId"    column="subject_id"    />
-        <result property="createDate"    column="create_date"    />
-        <result property="updateDate"    column="update_date"    />
+        <result property="createTime"    column="create_date"    />
+        <result property="updateTime"    column="update_date"    />
         <result property="answer"    column="answer"    />
         <result property="content"    column="content"    />
         <result property="questionType"    column="question_type"    />
@@ -40,8 +40,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectExamsQuestionVo"/>
         <where>  
             <if test="subjectId != null "> and question.subject_id = #{subjectId}</if>
-            <if test="createDate != null "> and create_date = #{createDate}</if>
-            <if test="updateDate != null "> and update_date = #{updateDate}</if>
+            <if test="createTime != null "> and create_date = #{createTime}</if>
+            <if test="updateTime != null "> and update_date = #{updateTime}</if>
             <if test="answer != null  and answer != ''"> and answer = #{answer}</if>
             <if test="content != null  and content != ''"> and content = #{content}</if>
             <if test="questionType != null  and questionType != ''"> and question_type = #{questionType}</if>
@@ -63,8 +63,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">id,</if>
             <if test="subjectId != null">subject_id,</if>
-            <if test="createDate != null">create_date,</if>
-            <if test="updateDate != null">update_date,</if>
+            <if test="createTime != null">create_date,</if>
+            <if test="updateTime != null">update_date,</if>
             <if test="answer != null">answer,</if>
             <if test="content != null">content,</if>
             <if test="questionType != null">question_type,</if>
@@ -78,8 +78,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="id != null">#{id},</if>
             <if test="subjectId != null">#{subjectId},</if>
             <if test="title != null">#{title},</if>
-            <if test="createDate != null">#{createDate},</if>
-            <if test="updateDate != null">#{updateDate},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
             <if test="answer != null">#{answer},</if>
             <if test="content != null">#{content},</if>
             <if test="questionType != null">#{questionType},</if>
@@ -94,8 +94,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         update exams_question
         <trim prefix="SET" suffixOverrides=",">
             <if test="subjectId != null">subject_id = #{subjectId},</if>
-            <if test="createDate != null">create_date = #{createDate},</if>
-            <if test="updateDate != null">update_date = #{updateDate},</if>
+            <if test="createTime != null">create_date = #{createTime},</if>
+            <if test="updateTime != null">update_date = #{updateTime},</if>
             <if test="answer != null">answer = #{answer},</if>
             <if test="content != null">content = #{content},</if>
             <if test="questionType != null">question_type = #{questionType},</if>

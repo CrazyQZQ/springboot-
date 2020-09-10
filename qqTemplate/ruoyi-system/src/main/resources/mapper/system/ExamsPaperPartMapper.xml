@@ -9,6 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="paperId"    column="paper_id"    />
         <result property="partId"    column="part_id"    />
         <result property="sort"    column="sort"    />
+        <result property="partScore"    column="part_score"    />
         <!-- 这是映射 -->
         <association property="part" javaType="ExamsPart">
             <result property="id"    column="part_id"    />
@@ -23,6 +24,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             paper_part.id,
             paper_part.part_id,
             paper_part.sort,
+            paper_part.part_score,
             part.question_type,
             part.discrib,
             part.dict_label as type_name
@@ -37,6 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="paperId != null "> and paper_id = #{paperId}</if>
             <if test="partId != null "> and part_id = #{partId}</if>
             <if test="sort != null "> and sort = #{sort}</if>
+            <if test="partScore != null "> and part_score = #{partScore}</if>
         </where>
     </select>
     
@@ -51,13 +54,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="paperId != null">paper_id,</if>
             <if test="partId != null">part_id,</if>
             <if test="sort != null">sort,</if>
+            <if test="partScore != null">part_score,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="paperId != null">#{paperId},</if>
             <if test="partId != null">#{partId},</if>
             <if test="sort != null">#{sort},</if>
+            <if test="partScore != null">#{partScore},</if>
          </trim>
     </insert>
+
+    <!-- 批量插入 -->
+    <insert id ="insertExamsPaperPartBatch" parameterType="java.util.List" >
+        insert into exams_paper_part
+        (paper_id, part_id, sort, part_score)
+        values
+        <foreach collection ="list" item="item" index= "index" separator =",">
+            (
+            #{item.paperId},
+            #{item.partId},
+            #{item.sort},
+            #{item.partScore}
+            )
+        </foreach >
+    </insert >
 
     <update id="updateExamsPaperPart" parameterType="ExamsPaperPart">
         update exams_paper_part
@@ -65,6 +85,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="paperId != null">paper_id = #{paperId},</if>
             <if test="partId != null">part_id = #{partId},</if>
             <if test="sort != null">sort = #{sort},</if>
+            <if test="partScore != null">part_score = #{partScore},</if>
         </trim>
         where id = #{id}
     </update>

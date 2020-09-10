@@ -20,17 +20,21 @@ public class ExamsPaperPart extends BaseEntity
 
     /** 试卷编号 */
     @Excel(name = "试卷编号")
-    private Long paperId;
+    private String paperId;
 
     /** 模块编号 */
     @Excel(name = "模块编号")
-    private Long partId;
+    private String partId;
 
     /** 模块排序 */
     @Excel(name = "模块排序")
     private Integer sort;
 
     private ExamsPart part;
+
+    /** 模块总分 */
+    @Excel(name = "模块总分")
+    private Double partScore;
 
     public void setId(Long id) 
     {
@@ -41,21 +45,21 @@ public class ExamsPaperPart extends BaseEntity
     {
         return id;
     }
-    public void setPaperId(Long paperId) 
+    public void setPaperId(String paperId)
     {
         this.paperId = paperId;
     }
 
-    public Long getPaperId() 
+    public String getPaperId()
     {
         return paperId;
     }
-    public void setPartId(Long partId) 
+    public void setPartId(String partId)
     {
         this.partId = partId;
     }
 
-    public Long getPartId() 
+    public String getPartId()
     {
         return partId;
     }
@@ -75,6 +79,14 @@ public class ExamsPaperPart extends BaseEntity
 
     public void setPart(ExamsPart part) {
         this.part = part;
+    }
+
+    public Double getPartScore() {
+        return partScore;
+    }
+
+    public void setPartScore(Double partScore) {
+        this.partScore = partScore;
     }
 
     @Override

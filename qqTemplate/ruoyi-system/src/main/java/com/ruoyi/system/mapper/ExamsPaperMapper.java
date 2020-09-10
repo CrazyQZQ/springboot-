@@ -2,6 +2,7 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 import com.ruoyi.system.domain.ExamsPaper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 【请填写功能名称】Mapper接口
@@ -9,7 +10,7 @@ import com.ruoyi.system.domain.ExamsPaper;
  * @author ruoyi
  * @date 2020-09-08
  */
-public interface ExamsPaperMapper 
+public interface ExamsPaperMapper
 {
     /**
      * 查询【请填写功能名称】
@@ -17,7 +18,7 @@ public interface ExamsPaperMapper
      * @param id 【请填写功能名称】ID
      * @return 【请填写功能名称】
      */
-    public ExamsPaper selectExamsPaperById(Long id);
+    public ExamsPaper selectExamsPaperById(String id);
 
     /**
      * 查询【请填写功能名称】列表
@@ -49,7 +50,7 @@ public interface ExamsPaperMapper
      * @param id 【请填写功能名称】ID
      * @return 结果
      */
-    public int deleteExamsPaperById(Long id);
+    public int deleteExamsPaperById(String id);
 
     /**
      * 批量删除【请填写功能名称】
@@ -57,5 +58,5 @@ public interface ExamsPaperMapper
      * @param ids 需要删除的数据ID
      * @return 结果
      */
-    public int deleteExamsPaperByIds(Long[] ids);
+    public int deleteExamsPaperByIds(String[] ids);
 }

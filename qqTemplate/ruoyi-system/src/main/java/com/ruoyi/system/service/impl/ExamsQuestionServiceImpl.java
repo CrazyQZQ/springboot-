@@ -53,7 +53,7 @@ public class ExamsQuestionServiceImpl implements IExamsQuestionService
     @Override
     public int insertExamsQuestion(ExamsQuestion examsQuestion)
     {
-        examsQuestion.setCreateDate(new Date());
+        examsQuestion.setCreateTime(new Date());
         return examsQuestionMapper.insertExamsQuestion(examsQuestion);
     }
 
@@ -66,7 +66,7 @@ public class ExamsQuestionServiceImpl implements IExamsQuestionService
     @Override
     public int updateExamsQuestion(ExamsQuestion examsQuestion)
     {
-        examsQuestion.setUpdateDate(new Date());
+        examsQuestion.setUpdateTime(new Date());
         return examsQuestionMapper.updateExamsQuestion(examsQuestion);
     }
 

@@ -58,4 +58,10 @@ public interface ExamsPartQuestionMapper
      * @return 结果
      */
     public int deleteExamsPartQuestionByIds(Long[] ids);
+
+    /**
+     * 批量插入
+      * @param partQuestions
+     */
+    public void insertExamsPartQuestionBatch(List<ExamsPartQuestion> partQuestions);
 }

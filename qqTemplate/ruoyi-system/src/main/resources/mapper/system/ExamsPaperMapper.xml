@@ -1,58 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ruoyi.system.mapper.ExamsPaperMapper">
-    
+
     <resultMap type="ExamsPaper" id="ExamsPaperResult">
-        <result property="id"    column="id"    />
-        <result property="name"    column="name"    />
-        <result property="schoolId"    column="school_id"    />
-        <result property="grandId"    column="grand_id"    />
-        <result property="subjectId"    column="subject_id"    />
-        <result property="createDate"    column="create_date"    />
-        <result property="updateDate"    column="update_date"    />
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="schoolId" column="school_id"/>
+        <result property="grandId" column="grand_id"/>
+        <result property="subjectId" column="subject_id"/>
+        <result property="createTime" column="create_date"/>
+        <result property="updateTime" column="update_date"/>
+        <result property="paperScore" column="paper_score"/>
+        <result property="schoolName" column="school_name"/>
+        <result property="grandName" column="grand_name"/>
+        <result property="subjectName" column="subject_name"/>
     </resultMap>
 
     <sql id="selectExamsPaperVo">
-        select id, name, school_id, grand_id, subject_id, create_date, update_date from exams_paper
+        SELECT
+            paper.id,
+            paper.NAME,
+            paper.school_id,
+            paper.grand_id,
+            paper.subject_id,
+            paper.create_date,
+            paper.update_date,
+            paper.paper_score,
+            dept.dept_name AS school_name,
+            SUBJECT.subject_name,
+            dict.dict_label AS grand_name
+        FROM
+            exams_paper paper
+            LEFT JOIN sys_dept dept ON dept.dept_id = paper.school_id
+            LEFT JOIN exams_subject SUBJECT ON SUBJECT.subject_id = paper.subject_id
+            LEFT JOIN sys_dict_data dict ON dict.dict_code = paper.grand_id
     </sql>
 
     <select id="selectExamsPaperList" parameterType="ExamsPaper" resultMap="ExamsPaperResult">
         <include refid="selectExamsPaperVo"/>
-        <where>  
-            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
-            <if test="schoolId != null "> and school_id = #{schoolId}</if>
-            <if test="grandId != null "> and grand_id = #{grandId}</if>
-            <if test="subjectId != null "> and subject_id = #{subjectId}</if>
-            <if test="createDate != null "> and create_date = #{createDate}</if>
-            <if test="updateDate != null "> and update_date = #{updateDate}</if>
+        <where>
+            <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+            <if test="schoolId != null ">and paper.school_id = #{schoolId}</if>
+            <if test="grandId != null ">and paper.grand_id = #{grandId}</if>
+            <if test="subjectId != null ">and paper.subject_id = #{subjectId}</if>
+            <if test="createTime != null ">and paper.create_date = #{createTime}</if>
+            <if test="updateTime != null ">and paper.update_date = #{updateTime}</if>
+            <if test="paperScore != null ">and paper.paper_score = #{paperScore}</if>
         </where>
     </select>
-    
-    <select id="selectExamsPaperById" parameterType="Long" resultMap="ExamsPaperResult">
+
+    <select id="selectExamsPaperById" parameterType="String" resultMap="ExamsPaperResult">
         <include refid="selectExamsPaperVo"/>
         where id = #{id}
     </select>
-        
+
     <insert id="insertExamsPaper" parameterType="ExamsPaper" useGeneratedKeys="true" keyProperty="id">
         insert into exams_paper
         <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">id,</if>
             <if test="name != null and name != ''">name,</if>
             <if test="schoolId != null">school_id,</if>
             <if test="grandId != null">grand_id,</if>
             <if test="subjectId != null">subject_id,</if>
-            <if test="createDate != null">create_date,</if>
-            <if test="updateDate != null">update_date,</if>
-         </trim>
+            <if test="createTime != null">create_date,</if>
+            <if test="updateTime != null">update_date,</if>
+            <if test="paperScore != null">paper_score,</if>
+        </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null and id != ''">#{id},</if>
             <if test="name != null and name != ''">#{name},</if>
             <if test="schoolId != null">#{schoolId},</if>
             <if test="grandId != null">#{grandId},</if>
             <if test="subjectId != null">#{subjectId},</if>
-            <if test="createDate != null">#{createDate},</if>
-            <if test="updateDate != null">#{updateDate},</if>
-         </trim>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="paperScore != null">#{paperScore},</if>
+        </trim>
     </insert>
 
     <update id="updateExamsPaper" parameterType="ExamsPaper">
@@ -62,8 +87,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="schoolId != null">school_id = #{schoolId},</if>
             <if test="grandId != null">grand_id = #{grandId},</if>
             <if test="subjectId != null">subject_id = #{subjectId},</if>
-            <if test="createDate != null">create_date = #{createDate},</if>
-            <if test="updateDate != null">update_date = #{updateDate},</if>
+            <if test="createTime != null">create_date = #{createTime},</if>
+            <if test="updateTime != null">update_date = #{updateTime},</if>
+            <if test="paperScore != null">paper_score = #{paperScore},</if>
         </trim>
         where id = #{id}
     </update>
@@ -73,10 +99,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </delete>
 
     <delete id="deleteExamsPaperByIds" parameterType="String">
-        delete from exams_paper where id in 
+        delete from exams_paper where id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
-    
+
 </mapper>

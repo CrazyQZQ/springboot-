@@ -113,4 +113,12 @@ public class RuoYiConfig
     {
         return getProfile() + "/upload";
     }
+
+    /**
+     * 获取临时路径
+     */
+    public static String getTempPath()
+    {
+        return getProfile() + "/temp";
+    }
 }

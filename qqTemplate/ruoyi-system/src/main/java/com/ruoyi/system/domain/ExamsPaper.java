@@ -20,7 +20,7 @@ public class ExamsPaper extends BaseEntity
     private static final long serialVersionUID = 1L;
 
     /** $column.columnComment */
-    private Long id;
+    private String id;
 
     /** 试卷名 */
     @Excel(name = "试卷名")
@@ -30,32 +30,37 @@ public class ExamsPaper extends BaseEntity
     @Excel(name = "学校编号")
     private Long schoolId;
 
+    @Excel(name = "学校")
+    private String schoolName;
+
     /** 年级编号 */
     @Excel(name = "年级编号")
     private Long grandId;
+
+    @Excel(name = "年级")
+    private String grandName;
 
     /** 科目编号 */
     @Excel(name = "科目编号")
     private Long subjectId;
 
-    /** 创建时间 */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "创建时间", width = 30, dateFormat = "yyyy-MM-dd")
-    private Date createDate;
+    @Excel(name = "科目")
+    private String subjectName;
 
-    /** 修改时间 */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "修改时间", width = 30, dateFormat = "yyyy-MM-dd")
-    private Date updateDate;
 
-    private List<ExamsPaperPart> parts;
+    private List<ExamsPaperPart> paperParts;
 
-    public void setId(Long id) 
+    private List<ExamsPart> parts;
+
+    @Excel(name = "总分")
+    private Integer paperScore;
+
+    public void setId(String id)
     {
         this.id = id;
     }
 
-    public Long getId() 
+    public String getId()
     {
         return id;
     }
@@ -95,31 +100,53 @@ public class ExamsPaper extends BaseEntity
     {
         return subjectId;
     }
-    public void setCreateDate(Date createDate) 
-    {
-        this.createDate = createDate;
+
+    public List<ExamsPaperPart> getPaperParts() {
+        return paperParts;
     }
 
-    public Date getCreateDate() 
-    {
-        return createDate;
-    }
-    public void setUpdateDate(Date updateDate) 
-    {
-        this.updateDate = updateDate;
+    public void setPaperParts(List<ExamsPaperPart> paperParts) {
+        this.paperParts = paperParts;
     }
 
-    public Date getUpdateDate() 
-    {
-        return updateDate;
-    }
-
-    public List<ExamsPaperPart> getParts() {
+    public List<ExamsPart> getParts() {
         return parts;
     }
 
-    public void setParts(List<ExamsPaperPart> parts) {
+    public void setParts(List<ExamsPart> parts) {
         this.parts = parts;
+    }
+
+    public Integer getPaperScore() {
+        return paperScore;
+    }
+
+    public void setPaperScore(Integer paperScore) {
+        this.paperScore = paperScore;
+    }
+
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+
+    public String getGrandName() {
+        return grandName;
+    }
+
+    public void setGrandName(String grandName) {
+        this.grandName = grandName;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     @Override
@@ -130,8 +157,6 @@ public class ExamsPaper extends BaseEntity
             .append("schoolId", getSchoolId())
             .append("grandId", getGrandId())
             .append("subjectId", getSubjectId())
-            .append("createDate", getCreateDate())
-            .append("updateDate", getUpdateDate())
             .toString();
     }
 }

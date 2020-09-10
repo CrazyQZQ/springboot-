@@ -20,7 +20,7 @@ public class ExamsPartQuestion extends BaseEntity
 
     /** 模块编号 */
     @Excel(name = "模块编号")
-    private Long partId;
+    private String partId;
 
     /** 试题编号 */
     @Excel(name = "试题编号")
@@ -32,6 +32,9 @@ public class ExamsPartQuestion extends BaseEntity
 
     private ExamsQuestion question;
 
+    @Excel(name = "分数")
+    private Double questionScore;
+
     public void setId(Long id) 
     {
         this.id = id;
@@ -41,12 +44,12 @@ public class ExamsPartQuestion extends BaseEntity
     {
         return id;
     }
-    public void setPartId(Long partId) 
+    public void setPartId(String partId)
     {
         this.partId = partId;
     }
 
-    public Long getPartId() 
+    public String getPartId()
     {
         return partId;
     }
@@ -75,6 +78,14 @@ public class ExamsPartQuestion extends BaseEntity
 
     public void setQuestion(ExamsQuestion question) {
         this.question = question;
+    }
+
+    public Double getQuestionScore() {
+        return questionScore;
+    }
+
+    public void setQuestionScore(Double questionScore) {
+        this.questionScore = questionScore;
     }
 
     @Override

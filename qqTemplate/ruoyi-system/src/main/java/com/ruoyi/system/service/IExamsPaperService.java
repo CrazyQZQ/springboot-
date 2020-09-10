@@ -19,7 +19,7 @@ public interface IExamsPaperService
      * @param id 【请填写功能名称】ID
      * @return 【请填写功能名称】
      */
-    public ExamsPaper selectExamsPaperById(Long id);
+    public ExamsPaper selectExamsPaperById(String id);
 
     /**
      * 查询【请填写功能名称】列表
@@ -51,7 +51,7 @@ public interface IExamsPaperService
      * @param ids 需要删除的【请填写功能名称】ID
      * @return 结果
      */
-    public int deleteExamsPaperByIds(Long[] ids);
+    public int deleteExamsPaperByIds(String[] ids);
 
     /**
      * 删除【请填写功能名称】信息
@@ -59,5 +59,5 @@ public interface IExamsPaperService
      * @param id 【请填写功能名称】ID
      * @return 结果
      */
-    public int deleteExamsPaperById(Long id);
+    public int deleteExamsPaperById(String id);
 }

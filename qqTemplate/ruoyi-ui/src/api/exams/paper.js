@@ -44,10 +44,19 @@ export function delPaper(id) {
 }
 
 // 导出试卷
-export function exportPaper(query) {
+export function exportPaper(data) {
   return request({
     url: '/exams/paper/export',
-    method: 'get',
-    params: query
+    method: 'post',
+    data: data
   })
 }
+
+// 导出试卷
+// export function exportPaper(query) {
+//   return request({
+//     url: '/exams/paper/export',
+//     method: 'get',
+//     params: query
+//   })
+// }

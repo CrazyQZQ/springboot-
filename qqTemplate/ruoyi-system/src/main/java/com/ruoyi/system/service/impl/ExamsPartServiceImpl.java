@@ -32,13 +32,13 @@ public class ExamsPartServiceImpl implements IExamsPartService
      * @return 【请填写功能名称】
      */
     @Override
-    public ExamsPart selectExamsPartById(Long id)
+    public ExamsPart selectExamsPartById(String id)
     {
         ExamsPart examsPart = examsPartMapper.selectExamsPartById(id);
         ExamsPartQuestion examsPartQuestion = new ExamsPartQuestion();
         examsPartQuestion.setPartId(id);
         List<ExamsPartQuestion> examsPartQuestions = examsPartQuestionMapper.selectExamsPartQuestionList(examsPartQuestion);
-        examsPart.setQuestions(examsPartQuestions);
+        examsPart.setPartQuestions(examsPartQuestions);
         return examsPart;
     }
 
@@ -85,7 +85,7 @@ public class ExamsPartServiceImpl implements IExamsPartService
      * @return 结果
      */
     @Override
-    public int deleteExamsPartByIds(Long[] ids)
+    public int deleteExamsPartByIds(String[] ids)
     {
         return examsPartMapper.deleteExamsPartByIds(ids);
     }
@@ -97,7 +97,7 @@ public class ExamsPartServiceImpl implements IExamsPartService
      * @return 结果
      */
     @Override
-    public int deleteExamsPartById(Long id)
+    public int deleteExamsPartById(String id)
     {
         return examsPartMapper.deleteExamsPartById(id);
     }

@@ -5,10 +5,9 @@ import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.core.page.TableDataInfo;
 import com.ruoyi.common.enums.BusinessType;
-import com.ruoyi.common.utils.poi.ExcelUtil;
+import com.ruoyi.common.utils.poi.WordUtil;
+import com.ruoyi.common.utils.poi.WordUtil2;
 import com.ruoyi.system.domain.ExamsPaper;
-import com.ruoyi.system.domain.ExamsPart;
-import com.ruoyi.system.domain.ExamsPartQuestion;
 import com.ruoyi.system.service.IExamsPaperService;
 import com.ruoyi.system.service.IExamsPartQuestionService;
 import com.ruoyi.system.service.IExamsPartService;
@@ -53,12 +52,10 @@ public class PaperController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('system:paper:export')")
     @Log(title = "试卷", businessType = BusinessType.EXPORT)
-    @GetMapping("/export")
-    public AjaxResult export(ExamsPaper examsPaper)
-    {
-        List<ExamsPaper> list = examsPaperService.selectExamsPaperList(examsPaper);
-        ExcelUtil<ExamsPaper> util = new ExcelUtil<ExamsPaper>(ExamsPaper.class);
-        return util.exportExcel(list, "paper");
+    @PostMapping("/export")
+    public AjaxResult export(@RequestBody String content) {
+        WordUtil util = new WordUtil();
+        return util.exportWord("<html><body>"+content+"</body></html>");
     }
 
     /**
@@ -66,7 +63,7 @@ public class PaperController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('system:paper:query')")
     @GetMapping(value = "/{id}")
-    public AjaxResult getInfo(@PathVariable("id") Long id)
+    public AjaxResult getInfo(@PathVariable("id") String id)
     {
         return AjaxResult.success(examsPaperService.selectExamsPaperById(id));
     }
@@ -99,7 +96,7 @@ public class PaperController extends BaseController {
     @PreAuthorize("@ss.hasPermi('system:paper:remove')")
     @Log(title = "试卷", businessType = BusinessType.DELETE)
     @DeleteMapping("/{ids}")
-    public AjaxResult remove(@PathVariable Long[] ids)
+    public AjaxResult remove(@PathVariable String[] ids)
     {
         return toAjax(examsPaperService.deleteExamsPaperByIds(ids));
     }

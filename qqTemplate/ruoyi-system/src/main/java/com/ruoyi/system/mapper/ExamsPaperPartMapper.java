@@ -58,4 +58,10 @@ public interface ExamsPaperPartMapper
      * @return 结果
      */
     public int deleteExamsPaperPartByIds(Long[] ids);
+
+    /**
+     * 批量插入【请填写功能名称】
+     * @param paperParts
+     */
+    public void insertExamsPaperPartBatch(List<ExamsPaperPart> paperParts);
 }

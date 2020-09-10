@@ -17,7 +17,7 @@ public interface ExamsPartMapper
      * @param id 【请填写功能名称】ID
      * @return 【请填写功能名称】
      */
-    public ExamsPart selectExamsPartById(Long id);
+    public ExamsPart selectExamsPartById(String id);
 
     /**
      * 查询【请填写功能名称】列表
@@ -49,7 +49,7 @@ public interface ExamsPartMapper
      * @param id 【请填写功能名称】ID
      * @return 结果
      */
-    public int deleteExamsPartById(Long id);
+    public int deleteExamsPartById(String id);
 
     /**
      * 批量删除【请填写功能名称】
@@ -57,5 +57,11 @@ public interface ExamsPartMapper
      * @param ids 需要删除的数据ID
      * @return 结果
      */
-    public int deleteExamsPartByIds(Long[] ids);
+    public int deleteExamsPartByIds(String[] ids);
+
+    /**
+     * 批量插入
+     * @param parts
+     */
+    public void insertExamsPartBatch(List<ExamsPart> parts);
 }

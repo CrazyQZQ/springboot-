@@ -17,7 +17,7 @@ public interface IExamsPartService
      * @param id 【请填写功能名称】ID
      * @return 【请填写功能名称】
      */
-    public ExamsPart selectExamsPartById(Long id);
+    public ExamsPart selectExamsPartById(String id);
 
     /**
      * 查询【请填写功能名称】列表
@@ -49,7 +49,7 @@ public interface IExamsPartService
      * @param ids 需要删除的【请填写功能名称】ID
      * @return 结果
      */
-    public int deleteExamsPartByIds(Long[] ids);
+    public int deleteExamsPartByIds(String[] ids);
 
     /**
      * 删除【请填写功能名称】信息
@@ -57,5 +57,5 @@ public interface IExamsPartService
      * @param id 【请填写功能名称】ID
      * @return 结果
      */
-    public int deleteExamsPartById(Long id);
+    public int deleteExamsPartById(String id);
 }

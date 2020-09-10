@@ -112,8 +112,8 @@
         this.form = {
           id: undefined,
           subjectId: undefined,
-          createDate: undefined,
-          updateDate: undefined,
+          createTime: undefined,
+          updateTime: undefined,
           answer: undefined,
           content: undefined,
           questionType: undefined,

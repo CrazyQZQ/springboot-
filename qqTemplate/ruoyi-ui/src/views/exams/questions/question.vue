@@ -11,17 +11,17 @@
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="创建时间" prop="createDate">
+      <el-form-item label="创建时间" prop="createTime">
         <el-date-picker clearable size="small" style="width: 200px"
-                        v-model="queryParams.createDate"
+                        v-model="queryParams.createTime"
                         type="date"
                         value-format="yyyy-MM-dd"
                         placeholder="选择创建时间">
         </el-date-picker>
       </el-form-item>
-      <el-form-item label="修改时间" prop="updateDate">
+      <el-form-item label="修改时间" prop="updateTime">
         <el-date-picker clearable size="small" style="width: 200px"
-                        v-model="queryParams.updateDate"
+                        v-model="queryParams.updateTime"
                         type="date"
                         value-format="yyyy-MM-dd"
                         placeholder="选择修改时间">
@@ -94,14 +94,14 @@
         </template>
       </el-table-column>
       <el-table-column label="试题类型" align="center" prop="typeName" />
-      <el-table-column label="创建时间" align="center" prop="createDate" width="150">
+      <el-table-column label="创建时间" align="center" prop="createTime" width="150">
         <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.createDate, '{y}-{m}-{d}') }}</span>
+          <span>{{ parseTime(scope.row.createTime, '{y}-{m}-{d}') }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="更新时间" align="center" prop="updateDate" width="150">
+      <el-table-column label="更新时间" align="center" prop="updateTime" width="150">
         <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.updateDate, '{y}-{m}-{d}') }}</span>
+          <span>{{ parseTime(scope.row.updateTime, '{y}-{m}-{d}') }}</span>
         </template>
       </el-table-column>
       <el-table-column label="答案" align="center" prop="answer" />
@@ -149,7 +149,7 @@
 </template>
 
 <script>
-  import { listQuestion, getQuestion, delQuestion, addQuestion, updateQuestion, exportQuestion } from "@/api/exams/question";
+  import { listQuestion, getQuestion, delQuestion, exportQuestion } from "@/api/exams/question";
   import { listSubject } from "@/api/exams/subject";
   import Editor from '@/components/Editor';
   import Tinymce from '@/components/Tinymce'
@@ -182,8 +182,8 @@
           pageNum: 1,
           pageSize: 10,
           subjectId: undefined,
-          createDate: undefined,
-          updateDate: undefined,
+          createTime: undefined,
+          updateTime: undefined,
           answer: undefined,
           content: undefined,
           questionType: undefined,
@@ -231,8 +231,8 @@
         this.form = {
           id: undefined,
           subjectId: undefined,
-          createDate: undefined,
-          updateDate: undefined,
+          createTime: undefined,
+          updateTime: undefined,
           answer: undefined,
           content: undefined,
           questionType: undefined,
