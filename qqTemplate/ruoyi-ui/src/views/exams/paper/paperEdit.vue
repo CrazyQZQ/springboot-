@@ -73,7 +73,7 @@
               <!-- ({{idx+1}})  ---- {{question.questionScore}}分 -->
             </span>
             <el-button
-              @click="questions.splice(idx)"
+              @click="parts[index].questions.splice(idx)"
               size="mini"
               type="danger"
               icon="el-icon-delete"

@@ -145,6 +145,12 @@
                 <artifactId>kaptcha</artifactId>
                 <version>${kaptcha.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+            </dependency>
             
             <!-- 定时任务-->
             <dependency>
@@ -185,12 +191,12 @@
     </dependencyManagement>
 
     <modules>
-        <module>ruoyi-admin</module>
-        <module>ruoyi-framework</module>
-        <module>ruoyi-system</module>
-        <module>ruoyi-quartz</module>
-        <module>ruoyi-generator</module>
-        <module>ruoyi-common</module>
+        <module>education-admin</module>
+        <module>education-framework</module>
+        <module>education-system</module>
+        <module>education-quartz</module>
+        <module>education-generator</module>
+        <module>education-common</module>
     </modules>
     <packaging>pom</packaging>
 

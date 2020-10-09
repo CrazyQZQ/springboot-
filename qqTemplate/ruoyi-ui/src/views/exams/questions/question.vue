@@ -142,8 +142,15 @@
     />
 
     <!-- 添加或修改试题对话框 -->
-    <el-dialog title="预览" :visible.sync="openPreview" width="500px" append-to-body>
-      <div v-html="previewQuestion.content"></div>
+    <el-dialog title="预览" :visible.sync="openPreview" class="question-preview-dialog" width="500px" append-to-body>
+      <div class="question-preview-title">
+        {{previewQuestion.title}}
+      </div>
+      <div class="question-preview-content" v-html="previewQuestion.content"></div>
+      <div class="question-preview-answer">
+        <span>答案：</span>
+        <p>{{previewQuestion.answer}}</p>
+      </div>
     </el-dialog>
   </div>
 </template>
@@ -301,3 +308,23 @@
     }
   };
 </script>
+<style scoped>
+  .question-preview-dialog .question-preview-title{
+    text-align: center;
+    font-size: 20px;
+  }
+  .question-preview-dialog .question-preview-answer>p{
+    text-indent: 2em;
+  }
+  .question-preview-dialog .question-preview-content{
+    box-shadow: 0 0 1px 0px #00000073;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+  }
+</style>
+<style>
+  .question-preview-dialog .el-dialog__header{
+    display: none;
+  }
+</style>
