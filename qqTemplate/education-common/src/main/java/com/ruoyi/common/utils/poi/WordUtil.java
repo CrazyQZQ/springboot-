@@ -155,10 +155,10 @@ public class WordUtil {
             imgUrl = imgUrl.split("base64,")[1];
             // 判断缓存中是否存在
             Object cacheObject = redisCache.getCacheObject(imgUrl);
-            if(!Objects.isNull(cacheObject)){
-                log.info("缓存中已经存在 ：" + cacheObject);
-                return (String)cacheObject;
-            }
+//            if(!Objects.isNull(cacheObject)){
+//                log.info("缓存中已经存在 ：" + cacheObject);
+//                return (String)cacheObject;
+//            }
             // base64转本地图片
             byte[] bytes = Base64.getDecoder().decode(imgUrl);
             String fileName = UUID.randomUUID().toString() + ".png";

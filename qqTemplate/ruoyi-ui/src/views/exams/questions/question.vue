@@ -149,7 +149,7 @@
       <div class="question-preview-content" v-html="previewQuestion.content"></div>
       <div class="question-preview-answer">
         <span>答案：</span>
-        <p>{{previewQuestion.answer}}</p>
+        <span>{{previewQuestion.answer}}</span>
       </div>
     </el-dialog>
   </div>

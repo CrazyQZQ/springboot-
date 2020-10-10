@@ -318,6 +318,7 @@ export default {
           }
         });
       }
+      this.$router.push({ name: 'Paper'})
     }
   }
 };
