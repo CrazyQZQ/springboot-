@@ -78,6 +78,16 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/java</directory>
+				<includes>
+					<include>**/*.docx</include>
+					<include>**/*.pptx</include>
+					<include>**/*.xlsx</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 
 </project>

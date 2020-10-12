@@ -23,57 +23,39 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/office")
 public class OfficeController {
-	
-	@Value("${docServer.api-url}")
-	private String apiUrl;
 
-	@Value("${fileServer.view-url}")
+    @Value("${docServer.api-url}")
+    private String apiUrl;
+
+    @Value("${fileServer.view-url}")
     private String viewUrl;
-	
-	@Value("${fileServer.save-url}")
-	private String saveUrl;
-	
-	@Value("${fileServer.root-path}")
-	private String rootPath;
 
-	@Autowired
-	private OfficeService officeService;
-	
-	/**
-	 * 
-	 * @param filename			文件名
-	 * @throws IOException 
-	 */
-	@RequestMapping
-	public ModelAndView office(String filename){
-		Path filePath = Paths.get(rootPath, filename);
-		Office office = new Office();
-		office.setId(UUID.randomUUID().toString());
-		office.setUrl(filePath.toString());
-		officeService.insertOffice(office);
-		long lastModifyTime;
-		try {
-			FileTime fileTime = Files.getLastModifiedTime(filePath);
-			lastModifyTime = fileTime.toMillis();
-		} catch (IOException e) {
-			lastModifyTime = System.currentTimeMillis();
-		}
-		Document doc = new Document();
-		doc.setKey(lastModifyTime + "");
-		doc.setFileType(FileUtils.getExtension(filename).replace(".", ""));
-		doc.setTitle(filename);
-		doc.setUrl(viewUrl + "/" + filename);
-		
-		EditorConfig editorConfig = new EditorConfig();
-		editorConfig.setCallbackUrl(saveUrl + "/" + filename);
-		editorConfig.setUser(new User(UUID.randomUUID().toString(),"user_" + new Random().nextInt(100)));
-		
-		ModelAndView mav = new ModelAndView("office");
-		mav.addObject("doc", doc);
-		mav.addObject("editorConfig", editorConfig);
-		mav.addObject("apiUrl", apiUrl);
-		mav.addObject("documentType", FileUtils.getFileType(filename));
-		return mav;
-	}
-	
+    @Value("${fileServer.save-url}")
+    private String saveUrl;
+
+    @Value("${fileServer.root-path}")
+    private String rootPath;
+
+    @Autowired
+    private OfficeService officeService;
+
+    /**
+     * @param filename 文件名
+     * @throws IOException
+     */
+    @RequestMapping("/view")
+    public ModelAndView view(String filename) {
+        return officeService.openFile(filename, false, false);
+    }
+
+    /**
+     * @param filename 文件名
+     * @throws IOException
+     */
+    @RequestMapping("/create")
+    public ModelAndView create(String filename) {
+        filename = filename == null ? "new.docx" : filename;
+        return officeService.openFile(filename, true, true);
+    }
+
 }
