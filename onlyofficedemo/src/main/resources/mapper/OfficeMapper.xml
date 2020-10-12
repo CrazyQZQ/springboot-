@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qq.office.mapper.OfficeMapper">
+
+    <resultMap type="org.qq.office.model.Office" id="OfficeResult">
+        <id     property="id"        column="id"       />
+        <result property="url"      column="url"     />
+    </resultMap>
+
+    <select id="selectPostAll" resultMap="OfficeResult">
+        select * from office
+    </select>
+
+    <select id="selectById" parameterType="String" resultMap="OfficeResult">
+        select * from office
+        where id = #{id}
+    </select>
+
+    <update id="updateOffice" parameterType="org.qq.office.model.Office">
+        update office
+        <set>
+            <if test="url != null and url != ''">url = #{url},</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <insert id="insertOffice" parameterType="org.qq.office.model.Office">
+        insert into office(
+        <if test="url != null and url != ''">url,</if>
+        <if test="id != null and id != ''">id</if>
+        )values(
+        <if test="url != null and url != ''">#{url},</if>
+        <if test="id != null and id != ''">#{id}</if>
+        )
+    </insert>
+
+    <delete id="deleteById" parameterType="String">
+		delete from office where id = #{id}
+	</delete>
+
+    <delete id="deleteByIds" parameterType="String">
+        delete from office where id in
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper> 
