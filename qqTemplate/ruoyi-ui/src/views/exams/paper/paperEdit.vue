@@ -33,7 +33,8 @@
           @click="open = true"
           v-hasPermi="['system:paper:add']"
           :disabled="!paper.schoolId || !paper.subjectId"
-        >新增模块</el-button>
+        >新增模块
+        </el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -42,7 +43,8 @@
           size="mini"
           @click="submitPaper"
           v-hasPermi="['system:paper:add']"
-        >提交</el-button>
+        >提交
+        </el-button>
       </el-col>
     </el-row>
     <el-row class="paper-info">
@@ -57,14 +59,16 @@
             size="mini"
             @click="addQuestion(part.questionType,index)"
             v-hasPermi="['system:paper:add']"
-          >新增试题</el-button>
+          >新增试题
+          </el-button>
           <el-button
             type="danger"
             icon="el-icon-plus"
             size="mini"
             @click="parts.splice(index)"
             v-hasPermi="['system:paper:add']"
-          >删除模块</el-button>
+          >删除模块
+          </el-button>
         </el-row>
         <el-row class="part-questions">
           <el-row v-for="(question,idx) in part.questions" :key="idx" class="question-item">
@@ -97,10 +101,10 @@
           </el-select>
         </el-form-item>
         <el-form-item label="描述" prop="discrib">
-          <el-input v-model="newPart.discrib" placeholder="请输入描述" type="textarea" />
+          <el-input v-model="newPart.discrib" placeholder="请输入描述" type="textarea"/>
         </el-form-item>
         <el-form-item label="模块总分" prop="partScore">
-          <el-input v-model="newPart.partScore" placeholder="请输入模块总分" />
+          <el-input v-model="newPart.partScore" placeholder="请输入模块总分"/>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -123,7 +127,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="试题分数" prop="questionScore">
-          <el-input v-model="newQuestion.questionScore" placeholder="试题分数" />
+          <el-input v-model="newQuestion.questionScore" placeholder="试题分数"/>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -135,247 +139,247 @@
 </template>
 
 <script>
-import { listDept } from "@/api/system/dept";
-import { listSubject } from "@/api/exams/subject";
-import { listQuestion, getQuestion } from "@/api/exams/question";
-import { getPaper, updatePaper, addPaper } from "@/api/exams/paper";
+  import {listDept} from "@/api/system/dept";
+  import {listSubject} from "@/api/exams/subject";
+  import {listQuestion, getQuestion} from "@/api/exams/question";
+  import {getPaper, updatePaper, addPaper} from "@/api/exams/paper";
 
-export default {
-  name: "PaperEdit",
-  data() {
-    return {
-      // 学校
-      schools: [],
-      // 科目
-      subjects: [],
-      // 题型
-      questionTypes: [],
-      paper: {},
-      newPart: {
-        questionType: "",
-        partScore: undefined,
-        questions: []
-      },
-      // 表单校验
-      partRules: {
-        questionType: [
-          { required: true, message: "题型不能为空", trigger: "change" }
-        ],
-        partScore: [
-          {
-            pattern: /^([0-9]{1,2}|100)$/,
-            message: "请输入正确的分数",
-            trigger: "blur"
-          }
-        ]
-      },
-      // 表单校验
-      questionRules: {
-        id: [{ required: true, message: "题型不能为空", trigger: "change" }],
-        questionScore: [
-          {
-            pattern: /^([0-9]{1,2}|100)$/,
-            message: "请输入正确的分数",
-            trigger: "blur"
-          }
-        ]
-      },
-      open: false,
-      openQuestion: false,
-      parts: [],
-      // 所有试题
-      allQuestions: [],
-      // 待选择的试题
-      questions: [],
-      newQuestion: {
-        id: undefined,
-        questionScore: undefined,
-        sort: -1
-      },
-      curPartIdx: -1
-    };
-  },
-  created() {
-    this.getData();
-  },
-  mounted() {
-    let id = this.$route.params.id;
-    if (id) {
-      getPaper(id).then(response => {
-        this.paper = this.handPaper(response.data);
-        this.parts = this.paper.parts;
-      });
-    }
-  },
-  methods: {
-    getData() {
-      this.getDicts("sys_question_type").then(response => {
-        this.questionTypes = response.data;
-      });
-      listDept({ parentId: 101 }).then(response => {
-        this.schools = response.data;
-      });
-      listSubject().then(response => {
-        this.subjects = response.rows;
-      });
-      listQuestion().then(res => {
-        this.allQuestions = res.rows;
-      });
-    },
-    handPaper(data) {
-      let paper = { parts: [], content: "" };
-      paper.id = data.id;
-      paper.schoolId = data.schoolId;
-      paper.grandId = data.grandId;
-      paper.subjectId = data.subjectId;
-      paper.name = data.name;
-      paper.createTime = data.createTime;
-      paper.updateTime = data.updateTime;
-      data.paperParts.forEach(paperPart => {
-        let part = JSON.parse(JSON.stringify(paperPart.part));
-        part.sort = paperPart.sort
-        part.partScore = paperPart.partScore
-        part.questions = [];
-        paperPart.part.partQuestions.forEach((partQuestion, index) => {
-          let question = JSON.parse(JSON.stringify(partQuestion.question));
-          question.sort = partQuestion.sort
-          question.questionScore = partQuestion.questionScore
-          part.questions.push(question);
-        });
-        paper.parts.push(part);
-      });
-      return paper;
-    },
-    resetPart() {
-      this.newPart = {
-        questionType: "",
-        partScore: undefined,
-        questions: []
+  export default {
+    name: "PaperEdit",
+    data() {
+      return {
+        // 学校
+        schools: [],
+        // 科目
+        subjects: [],
+        // 题型
+        questionTypes: [],
+        paper: {},
+        newPart: {
+          questionType: "",
+          partScore: undefined,
+          questions: []
+        },
+        // 表单校验
+        partRules: {
+          questionType: [
+            {required: true, message: "题型不能为空", trigger: "change"}
+          ],
+          partScore: [
+            {
+              pattern: /^([0-9]{1,2}|100)$/,
+              message: "请输入正确的分数",
+              trigger: "blur"
+            }
+          ]
+        },
+        // 表单校验
+        questionRules: {
+          id: [{required: true, message: "题型不能为空", trigger: "change"}],
+          questionScore: [
+            {
+              pattern: /^([0-9]{1,2}|100)$/,
+              message: "请输入正确的分数",
+              trigger: "blur"
+            }
+          ]
+        },
+        open: false,
+        openQuestion: false,
+        parts: [],
+        // 所有试题
+        allQuestions: [],
+        // 待选择的试题
+        questions: [],
+        newQuestion: {
+          id: undefined,
+          questionScore: undefined,
+          sort: -1
+        },
+        curPartIdx: -1
       };
     },
-    resetQuestion() {
-      this.newQuestion = {
-        id: undefined,
-        questionScore: undefined
-      };
+    created() {
+      this.getData();
     },
-    partSubmit() {
-      this.$refs["newPart"].validate(valid => {
-        if (valid) {
-          this.open = false;
-          this.newPart.sort = this.parts.length + 1;
-          this.parts.push(this.newPart);
-          this.resetPart();
-        }
-      });
-    },
-    cancelAddPart() {
-      this.open = false;
-      this.resetPart();
-    },
-    findQuestionType(id) {
-      let question = this.questionTypes.find(e => e.dictCode == id);
-      return question ? question.dictLabel : null;
-    },
-    findQuestion(id) {
-      let question = this.allQuestions.find(e => e.id == id);
-      return question;
-    },
-    addQuestion(questionType,index) {
-      this.openQuestion = true
-      this.curPartIdx = index
-      this.questions = this.allQuestions.filter(e => e.questionType==questionType)
-      console.log(this.questions)
-      // listQuestion({questionType:questionType}).then(res => {
-      //   this.questions = res.rows;
-      // });
-    },
-    questionSubmit() {
-      this.openQuestion = false;
-      this.newQuestion.sort = this.parts[this.curPartIdx].questions.length + 1;
-      this.parts[this.curPartIdx].questions.push(JSON.parse(JSON.stringify(this.newQuestion)));
-    },
-    cancelAddQuestion() {
-      this.openQuestion = false;
-      this.resetPart();
-    },
-    submitPaper() {
-      this.paper.grandId = this.subjects.find(
-        e => e.subjectId == this.paper.subjectId
-      ).grandId;
-      this.paper.parts = this.parts;
-      console.log(this.paper);
-      if (this.paper.id) {
-        updatePaper(this.paper).then(response => {
-          if (response.code === 200) {
-            this.msgSuccess("修改成功");
-          }
-        });
-      } else {
-        addPaper(this.paper).then(response => {
-          if (response.code === 200) {
-            this.msgSuccess("新增成功");
-          }
+    mounted() {
+      let id = this.$route.params.id;
+      if (id) {
+        getPaper(id).then(response => {
+          this.paper = this.handPaper(response.data);
+          this.parts = this.paper.parts;
         });
       }
-      this.$router.push({ name: 'Paper'})
+    },
+    methods: {
+      getData() {
+        this.getDicts("sys_question_type").then(response => {
+          this.questionTypes = response.data;
+        });
+        listDept({parentId: 101}).then(response => {
+          this.schools = response.data;
+        });
+        listSubject().then(response => {
+          this.subjects = response.rows;
+        });
+        listQuestion().then(res => {
+          this.allQuestions = res.rows;
+        });
+      },
+      handPaper(data) {
+        let paper = {parts: [], content: ""};
+        paper.id = data.id;
+        paper.schoolId = data.schoolId;
+        paper.grandId = data.grandId;
+        paper.subjectId = data.subjectId;
+        paper.name = data.name;
+        paper.createTime = data.createTime;
+        paper.updateTime = data.updateTime;
+        data.paperParts.forEach(paperPart => {
+          let part = JSON.parse(JSON.stringify(paperPart.part));
+          part.sort = paperPart.sort
+          part.partScore = paperPart.partScore
+          part.questions = [];
+          paperPart.part.partQuestions.forEach((partQuestion, index) => {
+            let question = JSON.parse(JSON.stringify(partQuestion.question));
+            question.sort = partQuestion.sort
+            question.questionScore = partQuestion.questionScore
+            part.questions.push(question);
+          });
+          paper.parts.push(part);
+        });
+        return paper;
+      },
+      resetPart() {
+        this.newPart = {
+          questionType: "",
+          partScore: undefined,
+          questions: []
+        };
+      },
+      resetQuestion() {
+        this.newQuestion = {
+          id: undefined,
+          questionScore: undefined
+        };
+      },
+      partSubmit() {
+        this.$refs["newPart"].validate(valid => {
+          if (valid) {
+            this.open = false;
+            this.newPart.sort = this.parts.length + 1;
+            this.parts.push(this.newPart);
+            this.resetPart();
+          }
+        });
+      },
+      cancelAddPart() {
+        this.open = false;
+        this.resetPart();
+      },
+      findQuestionType(id) {
+        let question = this.questionTypes.find(e => e.dictCode == id);
+        return question ? question.dictLabel : null;
+      },
+      findQuestion(id) {
+        let question = this.allQuestions.find(e => e.id == id);
+        return question;
+      },
+      addQuestion(questionType, index) {
+        this.openQuestion = true
+        this.curPartIdx = index
+        this.questions = this.allQuestions.filter(e => e.questionType == questionType)
+        console.log(this.questions)
+        // listQuestion({questionType:questionType}).then(res => {
+        //   this.questions = res.rows;
+        // });
+      },
+      questionSubmit() {
+        this.openQuestion = false;
+        this.newQuestion.sort = this.parts[this.curPartIdx].questions.length + 1;
+        this.parts[this.curPartIdx].questions.push(JSON.parse(JSON.stringify(this.newQuestion)));
+      },
+      cancelAddQuestion() {
+        this.openQuestion = false;
+        this.resetPart();
+      },
+      submitPaper() {
+        this.paper.grandId = this.subjects.find(
+          e => e.subjectId == this.paper.subjectId
+        ).grandId;
+        this.paper.parts = this.parts;
+        console.log(this.paper);
+        if (this.paper.id) {
+          updatePaper(this.paper).then(response => {
+            if (response.code === 200) {
+              this.msgSuccess("修改成功");
+            }
+          });
+        } else {
+          addPaper(this.paper).then(response => {
+            if (response.code === 200) {
+              this.msgSuccess("新增成功");
+            }
+          });
+        }
+        this.$router.push({name: 'Paper'})
+      }
     }
-  }
-};
+  };
 </script>
 <style scoped>
-.app-container {
-  height: 100%;
-}
+  .app-container {
+    height: 100%;
+  }
 
-.tool-bar {
-  height: 40px;
-  line-height: 40px;
-  margin-bottom: 10px;
-}
+  .tool-bar {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
 
-.tool-bar .paper-prop > .el-input {
-  width: 200px;
-}
+  .tool-bar .paper-prop > .el-input {
+    width: 200px;
+  }
 
-.paper-info {
-  height: calc(100% - 50px);
-}
+  .paper-info {
+    height: calc(100% - 50px);
+  }
 
-.paper-info .part-item {
-  width: 80%;
-  margin: 5px auto;
-  border: 1px solid #ccc6c6;
-  padding: 10px;
-  transition: all 0.5s;
-}
+  .paper-info .part-item {
+    width: 80%;
+    margin: 5px auto;
+    border: 1px solid #ccc6c6;
+    padding: 10px;
+    transition: all 0.5s;
+  }
 
-.paper-info .part-item:hover {
-  box-shadow: 3px 4px 1px 1px #efefef;
-}
+  .paper-info .part-item:hover {
+    box-shadow: 3px 4px 1px 1px #efefef;
+  }
 
-.paper-info .part-item .part-info {
-  height: 35px;
-  line-height: 35px;
-}
+  .paper-info .part-item .part-info {
+    height: 35px;
+    line-height: 35px;
+  }
 
-.paper-info .part-item .part-info > span {
-  margin-right: 10px;
-}
+  .paper-info .part-item .part-info > span {
+    margin-right: 10px;
+  }
 
-.paper-info .part-item .question-item {
-  height: 35px;
-  line-height: 35px;
-  padding-left: 10px;
-  border-bottom: 1px solid #efefef;
-  transition: all 0.5s;
-}
+  .paper-info .part-item .question-item {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    border-bottom: 1px solid #efefef;
+    transition: all 0.5s;
+  }
 
-.paper-info .part-item .question-item > span {
-  margin-right: 15px;
-}
+  .paper-info .part-item .question-item > span {
+    margin-right: 15px;
+  }
 
-.paper-info .part-item .question-item:hover {
-  background-color: lightgray;
-}
+  .paper-info .part-item .question-item:hover {
+    background-color: lightgray;
+  }
 </style>
