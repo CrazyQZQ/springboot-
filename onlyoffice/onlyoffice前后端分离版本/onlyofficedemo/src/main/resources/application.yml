@@ -1,0 +1,27 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/ssm?useUnicode=true&charsetEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+# 文件服务配置
+fileServer:
+  view-url: http://192.168.11.124:8080/file/view
+  save-url: http://192.168.11.124:8080/file/save
+  root-path: D:\qq\onlyoffice\demos\files
+  
+# onlyoffice服务配置
+#docServer:
+#  api-url: http://192.168.83.130:8085/web-apps/apps/api/documents/api.js
+docServer:
+  api-url: http://192.168.11.124:8085/web-apps/apps/api/documents/api.js
+
+# MyBatis配置
+mybatis:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath:mapper/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis-config.xml
+
