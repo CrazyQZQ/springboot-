@@ -10,6 +10,9 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 @SpringBootTest
 class RabbitmqdemoApplicationTests {
 
@@ -39,5 +42,10 @@ class RabbitmqdemoApplicationTests {
         Message ageMsg = MessageBuilder.withBody("hello 18".getBytes()).setHeader("age","18").build();
         rabbitTemplate.send(RabbitHerderConfig.HEADERBAME,null,nameMsg);
         rabbitTemplate.send(RabbitHerderConfig.HEADERBAME,null,ageMsg);
+    }
+
+    @Test
+    void test4() {
+        System.out.println(DateFormat.getDateTimeInstance().format(new Date()));
     }
 }

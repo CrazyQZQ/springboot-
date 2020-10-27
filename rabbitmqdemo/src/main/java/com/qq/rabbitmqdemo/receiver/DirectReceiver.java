@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @date 2020/5/24 16:37
  */
-@Component
+//@Component
 public class DirectReceiver {
-    @RabbitListener(queues = "hello.qq")
+    @RabbitListener(queues = "logDirectQueue")
     public void handler(String msg) {
         System.out.println("handler >>>" +msg);
     }

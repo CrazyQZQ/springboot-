@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RabbitDirectConfig {
-    public final static String DIRECTNAME = "qq-direct";
+    public final static String DIRECTNAME = "log.exchange.direct";
 
     @Bean
     Queue queue() {
-        return new Queue("hello.qq");
+        return new Queue("logDirectQueue");
     }
 
     @Bean
@@ -28,6 +28,6 @@ public class RabbitDirectConfig {
 
     @Bean
     Binding binding() {
-        return BindingBuilder.bind(queue()).to(directExchange()).with("direct");
+        return BindingBuilder.bind(queue()).to(directExchange()).with("logDirectQueue");
     }
 }
